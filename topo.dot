@@ -1,0 +1,28 @@
+graph G {
+
+    h1 [label="H1\nFQDN:h1.ass2\nIP:10.0.0.1" shape=rect];
+    h2 [label="H2\nFQDN:h2.ass2\nIP:10.0.0.2" shape=rect];
+    h3 [label="H3\nFQDN:h3.ass2\nIP:10.0.0.3" shape=rect];
+    h4 [label="H4\nFQDN:h4.ass2\nIP:10.0.0.4" shape=rect];
+
+    dns [label ="DNS resolver\nFQDN:dns.ass2\nIP=10.0.0.5" shape=rect fillcolor=aqua style=filled]
+
+    s1 [label="S1" shape=circle style=filled fillcolor=antiquewhite];
+    s2 [label="S2" shape=circle style=filled fillcolor=antiquewhite];
+    s3 [label="S3" shape=circle style=filled fillcolor=antiquewhite];
+    s4 [label="S4" shape=circle style=filled fillcolor=antiquewhite];
+
+    h1--s1 [label="BW:100Mbps\nDelay:2ms"]
+    h2--s2 [label="BW:100Mbps\nDelay:2ms"]
+    h3--s3 [label="BW:100Mbps\nDelay:2ms"]
+    h4--s4 [label="BW:100Mbps\nDelay:2ms"]
+
+    s2--dns [label="BW:100Mbps\nDelay:1ms"]
+
+    s1--s2 [label="BW:100Mbps\nDelay:5ms"]
+    s2--s3 [label="BW:100Mbps\nDelay:8ms"]
+    s3--s4 [label="BW:100Mbps\nDelay:10ms"]
+
+    { rank=same; s1 s2 s3 s4};
+
+}
