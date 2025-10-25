@@ -1,0 +1,10 @@
+dns python3 dns.py server 10.0.0.5 server.log --log &
+dns echo "server started"
+h1 echo "h1 is client"
+h1 python3 extract.py "Pcaps/ PCAP_1_H1.pcap" H1.csv > H1.log
+h2 echo "h2 is client"
+h2 python3 extract.py "Pcaps/ PCAP_2_H2.pcap" H2.csv > H2.log
+h3 echo "h3 is client"
+h3 python3 extract.py "Pcaps/ PCAP_3_H3.pcap" H3.csv > H3.log
+h4 echo "h4 is client"
+h4 python3 extract.py "Pcaps/ PCAP_4_H4.pcap" H4.csv > H4.log

@@ -6,39 +6,12 @@ from mininet.link import TCLink
 from mininet.cli import CLI
 from mininet.log import setLogLevel, info
 from mininet.nodelib import NAT
+from time import sleep
 
 class AssignmentTopo(Topo):
 
     def addComLink(self,a:str,b:str,ip1,ip2,bw,delay):
-        if ip1 is not None and ip2 is not None:
-            print('case 1')
-            self.addLink(a, b, cls=TCLink, bw=bw, delay=delay,
-                        # intfName1=f'{a}-{b}', 
-                        params1 = {'ip':ip1}, 
-                        # intfName2=f'{b}-{a}', 
-                        params2 = {'ip':ip2})
-        elif ip1 is not None:
-            print('case 2')
-            self.addLink(a, b, cls=TCLink, bw=bw, delay=delay,
-                        # intfName1=f'{a}-{b}', 
-                        params1 = {'ip':ip1}, 
-                        # intfName2=f'{b}-{a}'
-                        )
-        elif ip2 is not None:
-            print('case 3')
-            self.addLink(a, b, cls=TCLink, bw=bw, delay=delay,
-                        # intfName1=f'{a}-{b}', 
-                        # intfName2=f'{b}-{a}',
-                        params2 = {'ip':ip2})
-        else :
-            print('case 4')
-            self.addLink(a, b, cls=TCLink, bw=bw, delay=delay,
-                        # intfName1=f'{a}-{b}', 
-                        # intfName2=f'{b}-{a}'
-                        )
-
-
-
+        self.addLink(a, b, cls=TCLink, bw=bw, delay=delay)
 
     def __init__(self,local_MAC='00:e9:3a:a5:d6:35',local_IP='10.7.14.115'):
         Topo.__init__(self)
@@ -51,7 +24,6 @@ class AssignmentTopo(Topo):
         dns = self.addHost('dns', ip='10.0.0.5/24')
 
         # Add switches
-
         s1 = self.addSwitch('s1')
         s2 = self.addSwitch('s2')
         s3 = self.addSwitch('s3')
@@ -79,26 +51,11 @@ def run():
     net.addNAT(name='n0').configDefault()
     net.start()
 
-    h1 = net.get('h1')
-    h2 = net.get('h2')
-    h3 = net.get('h3')
-    h4 = net.get('h4')
-    dns = net.get('dns')
+    mininet_log_file = open('mininet.log','w')
+    CLI(net,script='mininet_script.txt',stdout=mininet_log_file)
+    mininet_log_file.close()
 
-    s1 = net.get('s1')
-    s2 = net.get('s2')
-    s3 = net.get('s3')
-    s4 = net.get('s4')
-
-
-    info('*** Network successfully started\n')
-    info('*** Hosts: %s\n' % ', '.join([h.name for h in net.hosts]))
-
-
-    info('*** Launching CLI\n')
-    CLI(net)
     net.stop()
-
 
 if __name__ == '__main__':
     setLogLevel('info')

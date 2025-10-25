@@ -36,7 +36,7 @@ QCLASS_MAP = {
     255: "ANY"
 }
 
-def nslookup(name, qtype=1, qclass=1):
+def nslookup(name, qtype=1, qclass=1,nslookup_error_file=None):
     """Perform an nslookup with specified QTYPE and QCLASS numbers."""
 
     # Look up symbolic values
@@ -52,6 +52,12 @@ def nslookup(name, qtype=1, qclass=1):
         stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True
     )
     stdout, stderr = process.communicate()
+
+
+    print(stdout,file=nslookup_error_file,flush=True)
+    print(stderr,file=nslookup_error_file,flush=True)
+
+    if 'error' in stdout: print('some issue in nslookup. Check log')
 
     # end time and kill process
     t1 = time()
@@ -75,4 +81,5 @@ def nslookup(name, qtype=1, qclass=1):
 
 # Example usage
 if __name__ == "__main__":
-    print(nslookup("www.google.com", qtype='A', qclass='N'))
+    print(nslookup("www.google.com", qtype='A', qclass='IN'))
+    print(nslookup('buynowfromusa.com'))

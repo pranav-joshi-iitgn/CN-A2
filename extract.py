@@ -1,6 +1,7 @@
 import pyshark,sys,binascii
 from datetime import datetime
 from nslookup import nslookup,QCLASS_MAP,QTYPE_MAP
+from dns import custom_lookup
 import pandas as pd
 from time import sleep
 
@@ -39,42 +40,62 @@ def process_pkt(pkt) -> list:
             b += part_len
         query_type = int(B[b] + B[b+1],16)
         query_class = int(B[b+2] + B[b+3],16)
-        query_type = QTYPE_MAP[query_type]
-        query_class = QCLASS_MAP[query_class]
+        # query_type = QTYPE_MAP[query_type]
+        # query_class = QCLASS_MAP[query_class]
         b += 4
         name = '.'.join(name)
         queries.append(name)
         l -= 1
     return [(q,query_type,query_class) for q in queries]
 
+only_iter = ('--only_iter' in sys.argv)
+args = [x for x in sys.argv if not x.startswith('-')]
+
 # file = "Pcaps/ PCAP_1_H1.pcap"
-file = sys.argv[1]
-csvfile = sys.argv[2]
+file = args[1]
+csvfile = args[2]
 
 # Open the capture and filter for port 53 traffic (DNS)
 cap = pyshark.FileCapture(file,display_filter="udp.port == 53 || tcp.port == 53")
 resolutions = []
+nslookup_error_file = open('nslookup_log.txt','w')
 for i,pkt in enumerate(cap):
+    print('[Packet',i+1,']')
     try:
         new_queries = process_pkt(pkt)
         for q in new_queries: 
             print("Extracted :\t",q)
             name,qtype,qclass = q
+            a,n,d = nslookup(name,qtype,qclass,nslookup_error_file)
+            print("\tNumber of RRs:",n)
+            print("\tFirst Resolution:",a)
+            print("\tLookup Time:",d,'ms')
             # 100 queries in 1 minute is slightly more than 1 query in 0.5s
             sleep(0.5)
-            a,n,d = nslookup(name,qtype,qclass)
-            print("Number of RRs:",n)
-            print("First Resolution:",a)
-            print("Lookup Time:",d,'ms')
-            resolutions.append(q+(a,n,d))
+            a_c,n_c,d_c = custom_lookup(name,'10.0.0.5',qtype,qclass)
+            print("\t(custom) Number of RRs:",n_c)
+            print("\t(custom) First Resolution:",a_c)
+            print("\t(custom) Lookup Time:",d_c,'ms')
+            sleep(1) # there are actually multiple queries done in one iterative resolution
+            if not only_iter:
+                a_r,n_r,d_r = custom_lookup(name,'10.0.0.5',qtype,qclass,RD=True)
+                print("\t(custom) (RD) Number of RRs:",n_r)
+                print("\t(custom) (RD) First Resolution:",a_r)
+                print("\t(custom) (RD) Lookup Time:",d_r,'ms')
+                resolutions.append(q+(a,n,d,a_c,n_c,d_c,a_r,n_r,d_r))
+            else: resolutions.append(q+(a,n,d,a_c,n_c,d_c))
+            sleep(0.5)
     except AttributeError:
         print("packet doesn't have IP addresses or ports.")
         continue
-
-resolutions = pd.DataFrame(resolutions,columns=["query",'type','class','first_ans','num_ans_RR','lookup_time'])
+nslookup_error_file.close()
+resolutions = pd.DataFrame(
+    resolutions,
+    columns=(
+        ["query",'type','class',
+        'first_ans_default','num_ans_RR_default','lookup_time_default',
+        'first_ans_custom','num_ans_RR_custom','lookup_time_custom'
+        ] + ([] if only_iter else ['first_ans_custom_RD','num_ans_RR_custom_RD','lookup_time_custom_RD'])
+        )
+)
 resolutions.to_csv(csvfile,index=False)
-
-## Analysis
-
-print(100*resolutions['first_ans'].isnull().mean(),r"% of queries couldn't be answered")
-print("Average lookup time is :",resolutions['lookup_time'].mean(),'ms')
