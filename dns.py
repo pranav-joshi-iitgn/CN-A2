@@ -1,5 +1,6 @@
 import struct,random,sys,socket
 from time import time,sleep
+from datetime import datetime
 ROOT_SERVER = '198.41.0.4'
 
 QTYPE_MAP = {
@@ -40,17 +41,36 @@ QCLASS_MAP = {
 
 QCLASS_MAP_INV = {x:y for y,x in QCLASS_MAP.items()}
 
+DNS_CACHE = {}
+CACHING = False
+
 class ResourceRecord:
     def __init__(self,Name,Type,Class,TTL,RDlen,Value):
+        global CACHING,DNS_CACHE
         self.Name = Name
         self.Type = Type if isinstance(Type,str) else QTYPE_MAP[Type]
         self.Class = Class if isinstance(Class,str) else QCLASS_MAP[Class]
         self.TTL = TTL
         self.RDlen = RDlen
         self.Value = Value
+        if CACHING:
+            if (Name,Type,Class) not in DNS_CACHE : 
+                DNS_CACHE[(Name,Type,Class)] = [self]
+            else:
+                L = DNS_CACHE[(Name,Type,Class)]
+                for RR in L :
+                    if RR.Value == Value: 
+                        RR.TTL = TTL
+                        break
+                else:L.append(self)
 
     def __repr__(self):
         return f"({self.Name},{self.Type},{self.Class},{self.Value})"
+
+def check_cache(Name,Type,Class):
+    key = (Name,Type,Class)
+    if key not in DNS_CACHE : return []
+    return DNS_CACHE[key]
 
 def create_dns_query(name, qtype, qclass, RD=False):
     """Create a DNS query packet (byte array) for a given domain, qtype, and qclass."""
@@ -91,24 +111,6 @@ def create_dns_query(name, qtype, qclass, RD=False):
         packet += struct.pack('>H', qclass)
 
     return bytes(packet)
-
-QUERIES_SENT = 0
-ANSWERS_RECIEVED = 0
-
-def send_dns_query(packet, server_ip=ROOT_SERVER, port=53, timeout=5,Log=False,LogFile=None):
-    """Send the DNS query packet over UDP to the specified DNS server and return the response bytes."""
-    global QUERIES_SENT,ANSWERS_RECIEVED
-    L3PROTO = socket.AF_INET6 if (":" in server_ip) else socket.AF_INET
-    with socket.socket(L3PROTO, socket.SOCK_DGRAM) as sock:
-        if timeout is not None : sock.settimeout(timeout)
-        sock.sendto(packet, (server_ip, port))
-        QUERIES_SENT += 1
-        if Log: print('sent packet to',server_ip,file=LogFile,flush=True)
-        if Log: print('timeout :',timeout,file=LogFile,flush=True)
-        response, _ = sock.recvfrom(512)  # DNS typically max UDP size 512 bytes
-        if Log: print('recieved packet from',server_ip,file=LogFile,flush=True)
-        ANSWERS_RECIEVED += 1
-    return response
 
 def parse_dns_name(data, offset):
     """Parse a DNS encoded domain name (with possible pointers) starting at offset."""
@@ -175,7 +177,6 @@ def parse_rr(data, offset):
     else:rdata = rdata.hex()
     return ResourceRecord(name,rtype,rclass,ttl,rdlength,rdata),offset
 
-
 def parse_dns_message(data):
     """Parse a full DNS message and return its components as a dictionary."""
     result = {}
@@ -232,91 +233,141 @@ def parse_dns_message(data):
 
     return result
 
+class Logger:
+    def __init__(self,Enabled=True,LogFile=None,IndentLevel=0,TimeStamp=False):
+        self.TS = TimeStamp
+        self.E = Enabled
+        self.l = IndentLevel
+        self.file = LogFile
+    def print(self,*args,**kwargs):
+        """Logs based on the parameters passed in constructor"""
+        if not self.E : return
+        if not self.TS : print(self.l*"\t",*args,**kwargs,file=self.file)
+        TS = str(datetime.now())
+        print('[',TS,']',self.l*"\t",*args,**kwargs,file=self.file)
+
+QUERIES_SENT = 0
+ANSWERS_RECIEVED = 0
+
+def send_dns_query(packet, server_ip=ROOT_SERVER, port=53, timeout=5,Log=False,LogFile=None,logger=None):
+    """Send the DNS query packet over UDP to the specified DNS server and return the response bytes."""
+    global QUERIES_SENT,ANSWERS_RECIEVED
+    if logger is not None: log = logger
+    else: log = Logger(Log,LogFile,0,True)
+    L3PROTO = socket.AF_INET6 if (":" in server_ip) else socket.AF_INET
+    with socket.socket(L3PROTO, socket.SOCK_DGRAM) as sock:
+        if timeout is not None : sock.settimeout(timeout)
+        sock.sendto(packet, (server_ip, port))
+        QUERIES_SENT += 1
+        log.print('sent packet to',server_ip,'with timeout of',timeout,'s for response')
+        response, _ = sock.recvfrom(512)  # DNS typically max UDP size 512 bytes
+        # if Log: print('recieved packet from',server_ip,file=LogFile,flush=True)
+        log.print('recieved packet from',server_ip)
+        ANSWERS_RECIEVED += 1
+    return response
+
+
 MAX_DEPTH =10
 
 def ask(name,server=ROOT_SERVER,qtype=1,qclass=1,Log=False,RD=False,timeout=5,app_timeout=10,LogFile=None,depth=0):
     if depth > MAX_DEPTH : raise RecursionError("Too much recursion")
-    if Log : print('\t'*depth,name,'@',server,'to be answered in',app_timeout,'s',file=LogFile,flush=True)
+    log = Logger(Log,LogFile,depth,True)
+    log.print(name,'@',server,'to be answered in',app_timeout,'s')
     t0 = time()
-    pack = create_dns_query(name,qtype,qclass,RD)
-    response = send_dns_query(pack,server,timeout=timeout,Log=Log,LogFile=LogFile)
+    if CACHING : 
+        cached_records = check_cache(name,qtype,qclass)
+        if cached_records : 
+            log.print('[CACHE] Found',len(cached_records),'RRs')
+            return cached_records
+        log.print('[CACHE] miss')
     def check_time(stage=0):
         elapsed_time = float(time()-t0)
-        if Log : print('\t'*depth,'elapsed time:',elapsed_time,'s',file=LogFile,flush=True)
-        if elapsed_time > app_timeout: raise TimeoutError(f"stage {stage}")
+        if elapsed_time > app_timeout: raise TimeoutError(f"Timeout error at stage {stage}")
     def get_remaining_time():
         remaining_time = app_timeout-float(time()-t0)
-        if Log : print('\t'*depth,'remaining_time:',remaining_time,'s',file=LogFile,flush=True)
         return remaining_time
     check_time(1)
+    pack = create_dns_query(name,qtype,qclass,RD)
+    response = send_dns_query(pack,server,timeout=timeout,logger=log)
     response = parse_dns_message(response)
     answerRRs = response['Answers']
-    if Log : print('\t'*depth,name,'@',server,":",len(answerRRs),'RRs',file=LogFile,flush=True)
+    log.print("extracted",len(answerRRs),'Answer RRs')
     if answerRRs: return answerRRs 
     check_time(2)
-    authorityRRs = response['Authority']
-    additionalRRs = response['Additional']
-    if Log : print('\t'*depth,name,'#',server,":",len(authorityRRs),'RRs',file=LogFile,flush=True)
-    if Log : print('\t'*depth,name,'$',server,":",len(additionalRRs),'RRs',file=LogFile,flush=True)
 
     # If the desired thing was answered, awesome!
     # Otherwise, do NS stuff
-    pack = create_dns_query(name,2,1)
-    response = send_dns_query(pack,server,timeout=timeout,Log=Log,LogFile=LogFile)
-    check_time(3)
-    response = parse_dns_message(response)
+    authorityRRs = response['Authority']
+    additionalRRs = response['Additional']
+    log.print('extracted',len(authorityRRs),'Authority RRs')
+    log.print('extracted',len(additionalRRs),'Additional RRs')
+
+    log.print("Checking Additional RRs for delegated servers")
+    # pack = create_dns_query(name,2,1)
+    # response = send_dns_query(pack,server,timeout=timeout,logger=log)
+    # check_time(3)
+    # response = parse_dns_message(response)
     NS_RRs = [RR for RR in authorityRRs if RR.Type=='NS']
     A_RRs = [RR for RR in additionalRRs if RR.Type=='A' or RR.Type=='AAAA']
-    if Log: print('\t'*depth,"Moving to stage 4",file=LogFile,flush=True)
     for i,RR2 in enumerate(A_RRs):
-        if Log: print("\t"*depth,'trying',i+1,':',RR2.Value,file=LogFile,flush=True)
+        # if Log: print("\t"*depth,'trying',i+1,':',RR2.Value,file=LogFile,flush=True)
+        log.print(f'({i+1}) trying',RR2.Name,'(',RR2.Value,')')
         for j,RR in enumerate(NS_RRs):
             if RR.Value == RR2.Name: # found
                 new_server = RR2.Value
-                try:return ask(name,new_server,qtype,qclass,Log,RD,timeout,get_remaining_time(),LogFile,depth+1)
-                except:break
-        else:
-            if Log : print("\t"*depth,RR2.Value,'not matched',file=LogFile,flush=True)
-        check_time(4)
-    if Log: print('\t'*depth,"Moving to stage 5",file=LogFile,flush=True)
-    for RR in NS_RRs[:5]:
-        res = ask(RR.Value,ROOT_SERVER,1,1,Log,RD,timeout,get_remaining_time(),LogFile,depth+1)
+                try:
+                    answerRRs =  ask(name,new_server,qtype,qclass,Log,RD,timeout,get_remaining_time(),LogFile,depth+1)
+                    if not answerRRs:
+                        log.print(RR2.Name,'did not return any answers')
+                        break
+                    else: return answerRRs
+                except:
+                    log.print('asking',RR2.Name,'crashed')
+                    break
+        else:log.print('\t',RR2.Name,'not matched with any NS Authority RR')
+        check_time(3)
+    log.print("Trying to resolve values in Authority RRs to get IP address delegated server")
+    for i,RR in enumerate(NS_RRs[:5]):
+        log.print(f'({i+1}) getting',RR.Value)
+        try:res = ask(RR.Value,ROOT_SERVER,1,1,Log,RD,timeout,get_remaining_time(),LogFile,depth+1)
+        except:
+            log.print('getting',RR.Value,'crashed')
+            check_cache(5)
+            continue
         check_time(5)
-        for new_server in res[:5]:
+        for j,new_server in enumerate(res[:5]):
+            log.print(f'({i+1}:{j+1}) trying',new_server.Value)
             try:
                 res2 = ask(name,new_server.Value,qtype,qclass,Log,RD,timeout,get_remaining_time(),LogFile,depth+1)
                 if res2 : return res2
-            except:pass
-            check_time(6)
+                else:log.print(new_server.Value,"didn't return anything")
+            except:log.print('asking',new_server.Value,'failed')
+            check_time(5)
+        log.print(RR.Value,"didn't work")
     return []
 
 def server(ip,Log=False,RD=False,LogFile=None):
     global QUERIES_SENT,ANSWERS_RECIEVED
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     sock.bind((ip, 53))
-    print(f"[*] DNS server listening on {ip}:53",file=LogFile,flush=True)
+    log = Logger(True,LogFile,0,True)
+    log.print(f"[*] DNS server listening on {ip}:53")
     QUERIES_SENT = 0
     ANSWERS_RECIEVED = 0
     while True:
         try:
             data, addr = sock.recvfrom(512)
-            print('recieved from',addr,file=LogFile,flush=True)
-            
+            log.print('recieved from',addr)
             parsed = parse_dns_message(data)
             question = parsed['Questions'][0]
             qname = question['QName']
             qtype = question['QType']
-            
-            print(f"[Query] {qname} (type={qtype}) from {addr}",file=LogFile,flush=True)
-            
+            log.print(f"[Query] {qname} (type={qtype}) from {addr}")
             answers = ask(qname,ROOT_SERVER,qtype,1,Log,RD,LogFile=LogFile)
-            
-            if Log: print('Queries Sent :',QUERIES_SENT,file=LogFile,flush=True)
-            if Log: print('Answers Recieved :',ANSWERS_RECIEVED,file=LogFile,flush=True)
-
+            log.print('Queries Sent :',QUERIES_SENT)
+            log.print('Answers Recieved :',ANSWERS_RECIEVED)
             if not answers:
-                print(f"[!] No answers for {qname}",file=LogFile,flush=True)
-                # Send NXDOMAIN response
+                log.print("[!] No answers for",qname)
                 response = (
                     data[:2] +  # Keep transaction ID
                     struct.pack('>H', 0x8183) +  # Flags: response, NXDOMAIN
@@ -325,12 +376,10 @@ def server(ip,Log=False,RD=False,LogFile=None):
                 )
                 sock.sendto(response, addr)
                 continue
-            
-            print(answers,file=LogFile,flush=True)
 
             # Build response header
             transaction_id = data[:2]
-            flags = struct.pack('>H', 0x8180)  # Response, no error
+            flags = struct.pack('>H', 0x8180) # no error
             qdcount = struct.pack('>H', 1)
             ancount = struct.pack('>H', len(answers))
             nscount = struct.pack('>H', 0)
@@ -351,8 +400,7 @@ def server(ip,Log=False,RD=False,LogFile=None):
                 answer_section += struct.pack('>HHI', rtype, rclass, rr.TTL)
                 
                 # RDATA
-                if rr.Type == 'A':
-                    rdata = bytes(map(int, rr.Value.split('.')))
+                if rr.Type == 'A':rdata = bytes(map(int, rr.Value.split('.')))
                 elif rr.Type == 'AAAA':
                     parts = [int(x, 16) for x in rr.Value.split(':')]
                     rdata = b''.join(struct.pack('>H', p) for p in parts)
@@ -368,17 +416,17 @@ def server(ip,Log=False,RD=False,LogFile=None):
             # Assemble complete response
             response = transaction_id + flags + qdcount + ancount + nscount + arcount + question_section + answer_section
             sock.sendto(response, addr)
-            print(f"[Response] Sent {len(answers)} answers to {addr}",file=LogFile,flush=True)
+            log.print(f"[Response] Sent {len(answers)} answers to {addr}")
             
         except KeyboardInterrupt:
-            print("\n[!] Stopping server...",file=LogFile,flush=True)
+            log.print("\n[!] Stopping server...")
             break
         except Exception as e:
-            print(f"[Error] {e}",file=LogFile,flush=True)
+            log.print("[Error]",e)
             # Send NXDOMAIN response
             response = (
                 data[:2] +  # Keep transaction ID
-                struct.pack('>H', 0x8183) +  # Flags: response, NXDOMAIN
+                struct.pack('>H', 0x8183) + # Flags
                 data[4:12] +  # Keep question/answer counts from query
                 data[12:]  # Keep question section
             )
@@ -391,9 +439,9 @@ def client(name,server_ip,qtype=1,qclass=1,RD=False):
         print(e)
         return []
     response = parse_dns_message(response)
-    flags = response['Flags']
+    # flags = response['Flags']
     answers = response["Answers"]
-    if flags != "1000000110000000":print(f'{name}@{server_ip} response flags:',flags)
+    # if flags != "1000000110000000":print(f'{name}@{server_ip} response flags:',flags)
     return answers
 
 def custom_lookup(name,server_ip,qtype=1,qclass=1,RD=False):

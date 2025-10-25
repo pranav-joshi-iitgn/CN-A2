@@ -1,7 +1,7 @@
 Server:		10.0.0.6
 Address:	10.0.0.6#53
 
-** server can't find tenant-internet.com: NXDOMAIN
+** server can't find tuhafhaberler.com: NXDOMAIN
 
 
 
@@ -9,8 +9,7 @@ Server:		10.0.0.6
 Address:	10.0.0.6#53
 
 Non-authoritative answer:
-Name:	gadanguides.com
-Address: 93.188.2.51
+*** Can't find rtsab.com: No answer
 
 
 
@@ -18,19 +17,59 @@ Server:		10.0.0.6
 Address:	10.0.0.6#53
 
 Non-authoritative answer:
-Name:	charityjob.co.uk
-Address: 104.24.144.14
-Name:	charityjob.co.uk
-Address: 104.24.145.14
-Name:	charityjob.co.uk
-Address: 172.67.64.72
+Name:	i-butterfly.ru
+Address: 104.21.88.172
+Name:	i-butterfly.ru
+Address: 172.67.151.138
 
 
 
 Server:		10.0.0.6
 Address:	10.0.0.6#53
 
-** server can't find sarahpartridge.net: NXDOMAIN
+Non-authoritative answer:
+Name:	datepanchang.com
+Address: 13.75.93.156
+
+
+
+Server:		10.0.0.6
+Address:	10.0.0.6#53
+
+Non-authoritative answer:
+Name:	localhost.re
+Address: 172.67.163.57
+Name:	localhost.re
+Address: 104.21.50.127
+
+
+
+Server:		10.0.0.6
+Address:	10.0.0.6#53
+
+Non-authoritative answer:
+*** Can't find daehepharma.com: No answer
+
+
+
+Server:		10.0.0.6
+Address:	10.0.0.6#53
+
+Non-authoritative answer:
+Name:	ex-jw.org
+Address: 185.230.63.107
+Name:	ex-jw.org
+Address: 185.230.63.171
+Name:	ex-jw.org
+Address: 185.230.63.186
+
+
+
+;; Got SERVFAIL reply from 10.0.0.6, trying next server
+;; communications error to 127.0.0.53#53: connection refused
+;; communications error to 127.0.0.53#53: connection refused
+;; communications error to 127.0.0.53#53: connection refused
+;; no servers could be reached
 
 
 
@@ -45,7 +84,7 @@ Address:	10.0.0.6#53
 Server:		10.0.0.6
 Address:	10.0.0.6#53
 
-** server can't find marilynlingerie.com: NXDOMAIN
+** server can't find running-sigi.de: NXDOMAIN
 
 
 
@@ -53,8 +92,15 @@ Server:		10.0.0.6
 Address:	10.0.0.6#53
 
 Non-authoritative answer:
-Name:	anvilnetworksolutions.net
-Address: 217.160.0.13
+Name:	buynowfromusa.com
+Address: 35.223.118.1
+
+
+
+Server:		10.0.0.6
+Address:	10.0.0.6#53
+
+** server can't find pbprofile.com: NXDOMAIN
 
 
 
@@ -62,8 +108,15 @@ Server:		10.0.0.6
 Address:	10.0.0.6#53
 
 Non-authoritative answer:
-Name:	cdmail.fr
-Address: 5.196.212.149
+Name:	fini.net
+Address: 198.57.192.137
+
+
+
+Server:		10.0.0.6
+Address:	10.0.0.6#53
+
+** server can't find globalpoliticalspectrum.com: NXDOMAIN
 
 
 
@@ -71,8 +124,7 @@ Server:		10.0.0.6
 Address:	10.0.0.6#53
 
 Non-authoritative answer:
-Name:	freeditorial.com
-Address: 51.178.246.100
+*** Can't find 41latitude.com: No answer
 
 
 
@@ -80,22 +132,7 @@ Server:		10.0.0.6
 Address:	10.0.0.6#53
 
 Non-authoritative answer:
-Name:	ciber.com
-Address: 103.247.209.15
-
-
-
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-** server can't find get-webby.com: NXDOMAIN
-
-
-
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-** server can't find gadgetgearpro.com: NXDOMAIN
+*** Can't find zzxu.cn: No answer
 
 
 
@@ -103,50 +140,8 @@ Server:		10.0.0.6
 Address:	10.0.0.6#53
 
 Non-authoritative answer:
-Name:	sonoma-marinfair.org
-Address: 172.67.163.188
-Name:	sonoma-marinfair.org
-Address: 104.21.34.187
-
-
-
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-Non-authoritative answer:
-Name:	ishidatic.com
-Address: 15.197.172.60
-
-
-
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-Non-authoritative answer:
-Name:	minecraftserverdeals.com
-Address: 172.67.129.48
-Name:	minecraftserverdeals.com
-Address: 104.21.1.113
-
-
-
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-Non-authoritative answer:
-Name:	romney.com
-Address: 208.91.197.27
-
-
-
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-Non-authoritative answer:
-Name:	bookingnest.com
-Address: 13.248.169.48
-Name:	bookingnest.com
-Address: 76.223.54.146
+Name:	energybulbs.co.uk
+Address: 23.227.38.32
 
 
 
@@ -161,14 +156,18 @@ Address: 76.223.54.146
 Server:		10.0.0.6
 Address:	10.0.0.6#53
 
-** server can't find bigliettieventi.info: NXDOMAIN
+Non-authoritative answer:
+Name:	lozo.com
+Address: 107.21.144.47
+Name:	lozo.com
+Address: 34.192.96.224
 
 
 
 Server:		10.0.0.6
 Address:	10.0.0.6#53
 
-** server can't find asseenontvlaunchpad.com: NXDOMAIN
+** server can't find tottenhamhk.com: NXDOMAIN
 
 
 
@@ -176,8 +175,10 @@ Server:		10.0.0.6
 Address:	10.0.0.6#53
 
 Non-authoritative answer:
-Name:	ftf.com
-Address: 23.227.38.65
+Name:	newstetic.com
+Address: 172.67.131.89
+Name:	newstetic.com
+Address: 104.21.3.241
 
 
 
@@ -185,17 +186,10 @@ Server:		10.0.0.6
 Address:	10.0.0.6#53
 
 Non-authoritative answer:
-Name:	polymth.com
-Address: 104.21.57.169
-Name:	polymth.com
-Address: 172.67.147.218
-
-
-
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-** server can't find crsgfk.de: NXDOMAIN
+Name:	triggerfish.se
+Address: 162.159.134.42
+Name:	triggerfish.se
+Address: 162.159.135.42
 
 
 
@@ -203,8 +197,10 @@ Server:		10.0.0.6
 Address:	10.0.0.6#53
 
 Non-authoritative answer:
-Name:	urbannetwork.co.uk
-Address: 85.92.70.198
+Name:	reprosystems.ru
+Address: 104.21.59.11
+Name:	reprosystems.ru
+Address: 172.67.167.102
 
 
 
@@ -212,17 +208,8 @@ Server:		10.0.0.6
 Address:	10.0.0.6#53
 
 Non-authoritative answer:
-Name:	synrc.com
-Address: 104.21.40.117
-Name:	synrc.com
-Address: 172.67.185.234
-
-
-
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-** server can't find callcomm.info: NXDOMAIN
+Name:	interfloracentral.co.uk
+Address: 217.69.32.44
 
 
 
@@ -230,8 +217,10 @@ Server:		10.0.0.6
 Address:	10.0.0.6#53
 
 Non-authoritative answer:
-Name:	ceskykutil.cz
-Address: 80.211.205.242
+Name:	afairjudgement.com
+Address: 104.21.56.56
+Name:	afairjudgement.com
+Address: 172.67.178.132
 
 
 
@@ -239,8 +228,8 @@ Server:		10.0.0.6
 Address:	10.0.0.6#53
 
 Non-authoritative answer:
-Name:	ximangquantrieu.com
-Address: 123.31.17.119
+Name:	owlcreek.com
+Address: 205.178.189.129
 
 
 
@@ -248,8 +237,8 @@ Server:		10.0.0.6
 Address:	10.0.0.6#53
 
 Non-authoritative answer:
-Name:	shishioh.info
-Address: 219.94.162.166
+Name:	radioterminal.ru
+Address: 188.225.40.161
 
 
 
@@ -257,10 +246,15 @@ Server:		10.0.0.6
 Address:	10.0.0.6#53
 
 Non-authoritative answer:
-Name:	vpndefender.com
-Address: 54.224.56.57
-Name:	vpndefender.com
-Address: 34.234.125.61
+Name:	junio.com
+Address: 209.196.144.25
+
+
+
+Server:		10.0.0.6
+Address:	10.0.0.6#53
+
+** server can't find ditrblog.com: NXDOMAIN
 
 
 
@@ -268,8 +262,8 @@ Server:		10.0.0.6
 Address:	10.0.0.6#53
 
 Non-authoritative answer:
-Name:	hutago.com
-Address: 118.27.125.209
+Name:	alchemedialtd.com
+Address: 68.66.224.29
 
 
 
@@ -277,10 +271,14 @@ Server:		10.0.0.6
 Address:	10.0.0.6#53
 
 Non-authoritative answer:
-Name:	tangkas888.com
-Address: 172.67.130.50
-Name:	tangkas888.com
-Address: 104.21.7.113
+Name:	portclydegeneralstore.com
+Address: 198.185.159.145
+Name:	portclydegeneralstore.com
+Address: 198.49.23.144
+Name:	portclydegeneralstore.com
+Address: 198.49.23.145
+Name:	portclydegeneralstore.com
+Address: 198.185.159.144
 
 
 
@@ -288,8 +286,15 @@ Server:		10.0.0.6
 Address:	10.0.0.6#53
 
 Non-authoritative answer:
-Name:	egov.sy
-Address: 185.216.134.58
+Name:	alenpuaca.com
+Address: 67.205.28.253
+
+
+
+Server:		10.0.0.6
+Address:	10.0.0.6#53
+
+** server can't find dj-producer-j-mbargo.com: NXDOMAIN
 
 
 
@@ -297,10 +302,16 @@ Server:		10.0.0.6
 Address:	10.0.0.6#53
 
 Non-authoritative answer:
-Name:	abmcare.com
-Address: 104.18.10.144
-Name:	abmcare.com
-Address: 104.18.11.144
+Name:	iag-inc.com
+Address: 103.224.182.253
+
+
+
+;; Got SERVFAIL reply from 10.0.0.6, trying next server
+;; communications error to 127.0.0.53#53: connection refused
+;; communications error to 127.0.0.53#53: connection refused
+;; communications error to 127.0.0.53#53: connection refused
+;; no servers could be reached
 
 
 
@@ -308,14 +319,8 @@ Server:		10.0.0.6
 Address:	10.0.0.6#53
 
 Non-authoritative answer:
-Name:	iael.com
-Address: 139.162.174.209
-Name:	iael.com
-Address: 139.162.181.76
-Name:	iael.com
-Address: 172.104.149.86
-Name:	iael.com
-Address: 172.104.251.198
+Name:	kh.ua
+Address: 195.69.185.211
 
 
 
@@ -323,54 +328,9 @@ Server:		10.0.0.6
 Address:	10.0.0.6#53
 
 Non-authoritative answer:
-Name:	sailor.pl
-Address: 88.99.19.146
-
-
-
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-** server can't find skyhightmatter.info: NXDOMAIN
-
-
-
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-Non-authoritative answer:
-Name:	autopareri.com
-Address: 147.93.94.216
-
-
-
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-Non-authoritative answer:
-Name:	cia.it
-Address: 54.228.218.49
-Name:	cia.it
-Address: 3.248.13.228
-
-
-
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-Non-authoritative answer:
-Name:	texasbeyondhistory.net
-Address: 146.6.162.220
-
-
-
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-Non-authoritative answer:
-Name:	gardenofwords.com
+Name:	kennethehartman.com
 Address: 192.0.78.25
-Name:	gardenofwords.com
+Name:	kennethehartman.com
 Address: 192.0.78.24
 
 
@@ -379,8 +339,10 @@ Server:		10.0.0.6
 Address:	10.0.0.6#53
 
 Non-authoritative answer:
-Name:	giuseppelivraghi.it
-Address: 89.46.108.54
+Name:	hemcolubricants.com
+Address: 194.9.94.86
+Name:	hemcolubricants.com
+Address: 194.9.94.85
 
 
 
@@ -388,21 +350,8 @@ Server:		10.0.0.6
 Address:	10.0.0.6#53
 
 Non-authoritative answer:
-Name:	hdcric.com
-Address: 159.69.186.9
-Name:	hdcric.com
-Address: 95.216.161.60
-Name:	hdcric.com
-Address: 159.69.42.212
-Name:	hdcric.com
-Address: 159.69.83.207
-
-
-
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-** server can't find chekiang.info: NXDOMAIN
+Name:	forpsi.net
+Address: 85.255.6.237
 
 
 
@@ -410,10 +359,17 @@ Server:		10.0.0.6
 Address:	10.0.0.6#53
 
 Non-authoritative answer:
-Name:	archiportale.com
-Address: 104.18.13.154
-Name:	archiportale.com
-Address: 104.18.12.154
+Name:	memeblender.com
+Address: 104.21.7.158
+Name:	memeblender.com
+Address: 172.67.136.240
+
+
+
+Server:		10.0.0.6
+Address:	10.0.0.6#53
+
+** server can't find somode.com: NXDOMAIN
 
 
 
@@ -421,294 +377,9 @@ Server:		10.0.0.6
 Address:	10.0.0.6#53
 
 Non-authoritative answer:
-Name:	de.vu
-Address: 81.28.232.69
-
-
-
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-Non-authoritative answer:
-Name:	teachmyass.info
-Address: 103.224.182.212
-
-
-
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-Non-authoritative answer:
-Name:	nasaspaceflight.com
-Address: 172.66.40.183
-Name:	nasaspaceflight.com
-Address: 172.66.43.73
-
-
-
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-** server can't find consumerreviews24.com: NXDOMAIN
-
-
-
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-Non-authoritative answer:
-Name:	dilw.ie
-Address: 35.214.43.230
-
-
-
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-** server can't find bbqinjector.com: NXDOMAIN
-
-
-
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-Non-authoritative answer:
-Name:	gxjbsj.com
-Address: 172.247.103.2
-
-
-
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-Non-authoritative answer:
-Name:	fmnara.com
-Address: 49.247.215.98
-
-
-
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-Non-authoritative answer:
-Name:	pet-connect.ru
-Address: 194.58.112.174
-
-
-
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-Non-authoritative answer:
-Name:	synchchaos.com
-Address: 203.161.61.102
-
-
-
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-Non-authoritative answer:
-Name:	uca.edu
-Address: 161.31.3.35
-
-
-
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-Non-authoritative answer:
-Name:	oaister.org
-Address: 132.174.1.212
-
-
-
-;; Got SERVFAIL reply from 10.0.0.6, trying next server
-;; communications error to 127.0.0.53#53: connection refused
-;; communications error to 127.0.0.53#53: connection refused
-;; communications error to 127.0.0.53#53: connection refused
-;; no servers could be reached
-
-
-
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-** server can't find video-peche-poisson.fr: NXDOMAIN
-
-
-
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-Non-authoritative answer:
-Name:	currencyrates.org
-Address: 172.67.209.125
-Name:	currencyrates.org
-Address: 104.21.23.70
-
-
-
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-Non-authoritative answer:
-Name:	zpav.pl
-Address: 83.238.107.112
-
-
-
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-Non-authoritative answer:
-Name:	tawali.com
-Address: 173.249.147.46
-
-
-
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-** server can't find dock2office.com: NXDOMAIN
-
-
-
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-Non-authoritative answer:
-Name:	vlielandoutdoorcenter.nl
-Address: 185.232.249.41
-
-
-
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-Non-authoritative answer:
-Name:	gregginn.com
-Address: 3.33.130.190
-Name:	gregginn.com
+Name:	gamemob.com
 Address: 15.197.148.33
-
-
-
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-Non-authoritative answer:
-Name:	arcoat.com
-Address: 66.39.19.55
-
-
-
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-** server can't find cushinglawoffices.com: NXDOMAIN
-
-
-
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-Non-authoritative answer:
-Name:	eggcityradio.com
-Address: 103.224.182.253
-
-
-
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-Non-authoritative answer:
-Name:	michaelbyers.org
-Address: 198.185.159.144
-Name:	michaelbyers.org
-Address: 198.49.23.144
-Name:	michaelbyers.org
-Address: 198.49.23.145
-Name:	michaelbyers.org
-Address: 198.185.159.145
-
-
-
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-Non-authoritative answer:
-Name:	stkpro.ru
-Address: 205.251.138.125
-
-
-
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-** server can't find silveropt.ru: NXDOMAIN
-
-
-
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-Non-authoritative answer:
-Name:	topbarbee.com
-Address: 159.203.135.249
-
-
-
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-Non-authoritative answer:
-Name:	teleskill.it
-Address: 185.81.4.109
-
-
-
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-Non-authoritative answer:
-Name:	virtualjerusalem.com
-Address: 69.48.168.47
-
-
-
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-Non-authoritative answer:
-Name:	morban.co.uk
-Address: 217.160.0.111
-
-
-
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-** server can't find mechachal.org: NXDOMAIN
-
-
-
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-Non-authoritative answer:
-Name:	noblewomanhood.com
-Address: 74.208.236.114
-
-
-
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-Non-authoritative answer:
-Name:	cosmeticaestheticsurgery.com
-Address: 15.197.148.33
-Name:	cosmeticaestheticsurgery.com
+Name:	gamemob.com
 Address: 3.33.130.190
 
 
@@ -716,16 +387,7 @@ Address: 3.33.130.190
 Server:		10.0.0.6
 Address:	10.0.0.6#53
 
-Non-authoritative answer:
-Name:	note-so-easy.co.za
-Address: 102.211.204.40
-
-
-
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-** server can't find vietcapitaltour.com: NXDOMAIN
+** server can't find monsterhomesecuritystore.com: NXDOMAIN
 
 
 
@@ -733,17 +395,8 @@ Server:		10.0.0.6
 Address:	10.0.0.6#53
 
 Non-authoritative answer:
-Name:	ncees.org
-Address: 172.66.158.97
-Name:	ncees.org
-Address: 104.20.28.40
-
-
-
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-** server can't find laigang001.com: NXDOMAIN
+Name:	door2games.com
+Address: 160.153.0.43
 
 
 
@@ -758,7 +411,100 @@ Address:	10.0.0.6#53
 Server:		10.0.0.6
 Address:	10.0.0.6#53
 
-** server can't find clickdownloadfiles.com: NXDOMAIN
+Non-authoritative answer:
+Name:	gensee.com
+Address: 211.150.89.25
+
+
+
+Server:		10.0.0.6
+Address:	10.0.0.6#53
+
+Non-authoritative answer:
+Name:	caricsports.com
+Address: 172.67.216.98
+Name:	caricsports.com
+Address: 104.21.51.12
+
+
+
+Server:		10.0.0.6
+Address:	10.0.0.6#53
+
+** server can't find auqzzx.com: NXDOMAIN
+
+
+
+Server:		10.0.0.6
+Address:	10.0.0.6#53
+
+Non-authoritative answer:
+Name:	toaskfuture.com
+Address: 119.18.54.195
+
+
+
+Server:		10.0.0.6
+Address:	10.0.0.6#53
+
+Non-authoritative answer:
+Name:	cetsi.fr
+Address: 91.151.64.24
+
+
+
+Server:		10.0.0.6
+Address:	10.0.0.6#53
+
+** server can't find probigbets.com: NXDOMAIN
+
+
+
+Server:		10.0.0.6
+Address:	10.0.0.6#53
+
+Non-authoritative answer:
+Name:	bikesandtransit.com
+Address: 192.0.78.25
+Name:	bikesandtransit.com
+Address: 192.0.78.24
+
+
+
+Server:		10.0.0.6
+Address:	10.0.0.6#53
+
+Non-authoritative answer:
+Name:	aqvr.com
+Address: 89.117.19.57
+
+
+
+Server:		10.0.0.6
+Address:	10.0.0.6#53
+
+** server can't find niceinternetmoney.ru: NXDOMAIN
+
+
+
+Server:		10.0.0.6
+Address:	10.0.0.6#53
+
+** server can't find chonvn.com: NXDOMAIN
+
+
+
+Server:		10.0.0.6
+Address:	10.0.0.6#53
+
+** server can't find eugenbotnar.com: NXDOMAIN
+
+
+
+Server:		10.0.0.6
+Address:	10.0.0.6#53
+
+** server can't find phi-pe.com: NXDOMAIN
 
 
 
@@ -773,7 +519,9 @@ Address:	10.0.0.6#53
 Server:		10.0.0.6
 Address:	10.0.0.6#53
 
-** server can't find drglendza.co.rs: NXDOMAIN
+Non-authoritative answer:
+Name:	pictures-thailand.com
+Address: 66.96.149.1
 
 
 
@@ -781,22 +529,14 @@ Server:		10.0.0.6
 Address:	10.0.0.6#53
 
 Non-authoritative answer:
-Name:	ghimpele.ro
-Address: 89.35.160.167
-
-
-
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-** server can't find pahibu.net: NXDOMAIN
-
-
-
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-** server can't find trackcheatingspouse.com: NXDOMAIN
+Name:	2brightsparks.co.uk
+Address: 143.204.55.11
+Name:	2brightsparks.co.uk
+Address: 143.204.55.7
+Name:	2brightsparks.co.uk
+Address: 143.204.55.129
+Name:	2brightsparks.co.uk
+Address: 143.204.55.44
 
 
 
@@ -804,8 +544,8 @@ Server:		10.0.0.6
 Address:	10.0.0.6#53
 
 Non-authoritative answer:
-Name:	dricom-hosting.nl
-Address: 46.249.36.223
+Name:	astrumonline.ru
+Address: 217.69.136.59
 
 
 
@@ -813,10 +553,8 @@ Server:		10.0.0.6
 Address:	10.0.0.6#53
 
 Non-authoritative answer:
-Name:	medipacademy.com
-Address: 172.67.131.163
-Name:	medipacademy.com
-Address: 104.21.4.41
+Name:	blueridgelife.com
+Address: 192.124.249.6
 
 
 
@@ -824,26 +562,10 @@ Server:		10.0.0.6
 Address:	10.0.0.6#53
 
 Non-authoritative answer:
-Name:	e-daily.gr
-Address: 172.67.70.26
-Name:	e-daily.gr
-Address: 104.26.12.52
-Name:	e-daily.gr
-Address: 104.26.13.52
-
-
-
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-** server can't find cuteteenschoolgirlz.com: NXDOMAIN
-
-
-
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-** server can't find hralda.info: NXDOMAIN
+Name:	mwzip.com
+Address: 104.21.20.205
+Name:	mwzip.com
+Address: 172.67.194.102
 
 
 
@@ -851,15 +573,8 @@ Server:		10.0.0.6
 Address:	10.0.0.6#53
 
 Non-authoritative answer:
-Name:	sendrakhizonline.com
-Address: 20.244.2.144
-
-
-
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-** server can't find hayalforum.net: NXDOMAIN
+Name:	gusbi.com
+Address: 185.145.195.19
 
 
 
@@ -867,14 +582,146 @@ Server:		10.0.0.6
 Address:	10.0.0.6#53
 
 Non-authoritative answer:
-Name:	begleyhutton.com
+Name:	simternet.com
+Address: 15.197.225.128
+Name:	simternet.com
+Address: 3.33.251.168
+
+
+
+Server:		10.0.0.6
+Address:	10.0.0.6#53
+
+Non-authoritative answer:
+Name:	khsm.ru
+Address: 91.247.37.5
+
+
+
+Server:		10.0.0.6
+Address:	10.0.0.6#53
+
+Non-authoritative answer:
+Name:	livelinks.com
+Address: 108.158.61.13
+Name:	livelinks.com
+Address: 108.158.61.89
+Name:	livelinks.com
+Address: 108.158.61.12
+Name:	livelinks.com
+Address: 108.158.61.76
+
+
+
+Server:		10.0.0.6
+Address:	10.0.0.6#53
+
+Non-authoritative answer:
+Name:	jantv.in
+Address: 172.67.132.252
+Name:	jantv.in
+Address: 104.21.5.51
+
+
+
+Server:		10.0.0.6
+Address:	10.0.0.6#53
+
+Non-authoritative answer:
+Name:	hornil.com
+Address: 183.111.138.226
+
+
+
+Server:		10.0.0.6
+Address:	10.0.0.6#53
+
+Non-authoritative answer:
+Name:	7dfps.com
+Address: 172.67.161.32
+Name:	7dfps.com
+Address: 104.21.9.172
+
+
+
+Server:		10.0.0.6
+Address:	10.0.0.6#53
+
+Non-authoritative answer:
+Name:	luckypuppygames.com
+Address: 172.237.146.38
+Name:	luckypuppygames.com
+Address: 172.233.219.78
+Name:	luckypuppygames.com
+Address: 172.237.146.8
+Name:	luckypuppygames.com
+Address: 172.233.219.49
+Name:	luckypuppygames.com
+Address: 172.233.219.123
+Name:	luckypuppygames.com
+Address: 172.237.146.25
+
+
+
+Server:		10.0.0.6
+Address:	10.0.0.6#53
+
+Non-authoritative answer:
+Name:	b-matrix.com
+Address: 137.135.108.176
+
+
+
+Server:		10.0.0.6
+Address:	10.0.0.6#53
+
+** server can't find coutureauchocolat.com: NXDOMAIN
+
+
+
+Server:		10.0.0.6
+Address:	10.0.0.6#53
+
+Non-authoritative answer:
+Name:	afresnohomeinspector.com
+Address: 67.225.203.79
+
+
+
+Server:		10.0.0.6
+Address:	10.0.0.6#53
+
+Non-authoritative answer:
+Name:	pieceinch.com
+Address: 172.67.201.136
+Name:	pieceinch.com
+Address: 104.21.66.64
+
+
+
+Server:		10.0.0.6
+Address:	10.0.0.6#53
+
+Non-authoritative answer:
+Name:	australiatradenow.com
+Address: 52.77.97.73
+Name:	australiatradenow.com
+Address: 52.221.30.142
+
+
+
+Server:		10.0.0.6
+Address:	10.0.0.6#53
+
+Non-authoritative answer:
+Name:	diamondknot.com
 Address: 198.185.159.144
-Name:	begleyhutton.com
-Address: 198.49.23.145
-Name:	begleyhutton.com
-Address: 198.49.23.144
-Name:	begleyhutton.com
+Name:	diamondknot.com
 Address: 198.185.159.145
+Name:	diamondknot.com
+Address: 198.49.23.144
+Name:	diamondknot.com
+Address: 198.49.23.145
 
 
 
@@ -882,8 +729,8 @@ Server:		10.0.0.6
 Address:	10.0.0.6#53
 
 Non-authoritative answer:
-Name:	bmw-parts.ru
-Address: 91.236.136.97
+Name:	amorefieldlife.com
+Address: 162.241.226.124
 
 
 
@@ -891,10 +738,7 @@ Server:		10.0.0.6
 Address:	10.0.0.6#53
 
 Non-authoritative answer:
-Name:	rterc.in
-Address: 93.127.173.109
-Name:	rterc.in
-Address: 88.222.243.185
+*** Can't find sheltercoveinn.com: No answer
 
 
 
@@ -902,8 +746,136 @@ Server:		10.0.0.6
 Address:	10.0.0.6#53
 
 Non-authoritative answer:
-Name:	monitis.com
-Address: 188.172.236.218
+Name:	wrestlingfanssuck.com
+Address: 62.149.128.40
+
+
+
+Server:		10.0.0.6
+Address:	10.0.0.6#53
+
+Non-authoritative answer:
+Name:	sdccdonline.net
+Address: 209.129.16.41
+
+
+
+Server:		10.0.0.6
+Address:	10.0.0.6#53
+
+Non-authoritative answer:
+Name:	autofirenze.biz
+Address: 89.46.109.17
+
+
+
+Server:		10.0.0.6
+Address:	10.0.0.6#53
+
+Non-authoritative answer:
+Name:	house-sg.com
+Address: 208.98.40.33
+
+
+
+Server:		10.0.0.6
+Address:	10.0.0.6#53
+
+Non-authoritative answer:
+Name:	camcard.com
+Address: 184.169.209.203
+Name:	camcard.com
+Address: 184.169.200.40
+
+
+
+Server:		10.0.0.6
+Address:	10.0.0.6#53
+
+Non-authoritative answer:
+Name:	ppsuika.ac.id
+Address: 203.175.8.54
+
+
+
+Server:		10.0.0.6
+Address:	10.0.0.6#53
+
+Non-authoritative answer:
+Name:	healthnews4you.com
+Address: 15.197.148.33
+Name:	healthnews4you.com
+Address: 3.33.130.190
+
+
+
+Server:		10.0.0.6
+Address:	10.0.0.6#53
+
+Non-authoritative answer:
+Name:	stunninggirls.net
+Address: 34.95.33.229
+
+
+
+Server:		10.0.0.6
+Address:	10.0.0.6#53
+
+Non-authoritative answer:
+Name:	kathihill.com
+Address: 159.65.187.116
+
+
+
+Server:		10.0.0.6
+Address:	10.0.0.6#53
+
+** server can't find linksplash.info: NXDOMAIN
+
+
+
+Server:		10.0.0.6
+Address:	10.0.0.6#53
+
+Non-authoritative answer:
+Name:	group14eng.com
+Address: 192.124.249.164
+
+
+
+Server:		10.0.0.6
+Address:	10.0.0.6#53
+
+Non-authoritative answer:
+Name:	shqqaa.com
+Address: 172.67.134.61
+Name:	shqqaa.com
+Address: 104.21.25.127
+
+
+
+Server:		10.0.0.6
+Address:	10.0.0.6#53
+
+Non-authoritative answer:
+Name:	mesites.co.za
+Address: 41.204.200.130
+
+
+
+Server:		10.0.0.6
+Address:	10.0.0.6#53
+
+Non-authoritative answer:
+Name:	progettogiovani.pd.it
+Address: 185.213.115.40
+
+
+
+Server:		10.0.0.6
+Address:	10.0.0.6#53
+
+** server can't find uahoy.net: NXDOMAIN
 
 
 

@@ -73,10 +73,7 @@ def nslookup(name, qtype=1, qclass=1,nslookup_error_file=None):
     #prepare response
     num_RR = len(addresses)
     if num_RR:first_address = addresses[0]
-    else:
-        first_address = None
-        lookup_time = None
-
+    else:first_address = None
     return first_address, num_RR, lookup_time
 
 # Example usage
