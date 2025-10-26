@@ -1,12 +1,12 @@
 queries answered by resolver :
 	default	: 68.0 %
-	custom	: 71.0 %
-	custom_RD	: 70.0 %
+	custom	: 69.0 %
+	custom_RD	: 69.0 %
 average latency for queries answered by resolver :
-	default	: 940.15 ms
-	custom	: 1901.49 ms
-	custom_RD	: 1857.27 ms
+	default	: 777.21 ms
+	custom	: 668.2 ms
+	custom_RD	: 25.71 ms
 average throughput for queries answered by resolver :
-	default	: 1.06 request/s
-	custom	: 0.53 request/s
-	custom_RD	: 0.54 request/s
+	default	: 1.29 request/s
+	custom	: 1.5 request/s
+	custom_RD	: 38.9 request/s

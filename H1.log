@@ -3,147 +3,146 @@
 Extracted :	 ('tuhafhaberler.com', 1, 1)
 	Number of RRs: 0
 	First Resolution: None
-	Lookup Time: 104 ms
+	Lookup Time: 40 ms
 	(custom) Number of RRs: 0
 	(custom) First Resolution: None
-	(custom) Lookup Time: 10562 ms
+	(custom) Lookup Time: 10837 ms
 	(custom) (RD) Number of RRs: 0
 	(custom) (RD) First Resolution: None
-	(custom) (RD) Lookup Time: 10689 ms
+	(custom) (RD) Lookup Time: 11451 ms
 [Packet 2 ]
 2013-02-27 03:32:39.368790	 : UDP 192.168.1.111 → 8.8.8.8 : eb:09:01:0...
 Extracted :	 ('rtsab.com', 1, 1)
 	Number of RRs: 0
 	First Resolution: None
-	Lookup Time: 44 ms
+	Lookup Time: 550 ms
 	(custom) Number of RRs: 0
 	(custom) First Resolution: None
-	(custom) Lookup Time: 10139 ms
+	(custom) Lookup Time: 11662 ms
 	(custom) (RD) Number of RRs: 0
 	(custom) (RD) First Resolution: None
-	(custom) (RD) Lookup Time: 10048 ms
+	(custom) (RD) Lookup Time: 14185 ms
 [Packet 3 ]
 2013-02-27 03:32:42.107820	 : UDP 192.168.1.112 → 8.8.8.8 : c3:26:01:0...
 Extracted :	 ('i-butterfly.ru', 1, 1)
 	Number of RRs: 2
-	First Resolution: 104.21.88.172
-	Lookup Time: 102 ms
+	First Resolution: 172.67.151.138
+	Lookup Time: 130 ms
 	(custom) Number of RRs: 2
-	(custom) First Resolution: 104.21.88.172
-	(custom) Lookup Time: 991 ms
+	(custom) First Resolution: 172.67.151.138
+	(custom) Lookup Time: 1064 ms
 	(custom) (RD) Number of RRs: 2
 	(custom) (RD) First Resolution: 172.67.151.138
-	(custom) (RD) Lookup Time: 1206 ms
+	(custom) (RD) Lookup Time: 19 ms
 [Packet 4 ]
 2013-02-27 03:32:42.385792	 : UDP 192.168.1.113 → 8.8.8.8 : a8:ae:01:0...
 Extracted :	 ('datepanchang.com', 1, 1)
 	Number of RRs: 1
-	First Resolution: 13.75.93.156
-	Lookup Time: 606 ms
+	First Resolution: 13.75.66.141
+	Lookup Time: 881 ms
 	(custom) Number of RRs: 1
 	(custom) First Resolution: 13.75.66.141
-	(custom) Lookup Time: 1038 ms
+	(custom) Lookup Time: 331 ms
 	(custom) (RD) Number of RRs: 1
-	(custom) (RD) First Resolution: 13.75.93.156
-	(custom) (RD) Lookup Time: 1450 ms
+	(custom) (RD) First Resolution: 13.75.66.141
+	(custom) (RD) Lookup Time: 20 ms
 [Packet 5 ]
 2013-02-27 03:32:52.039032	 : UDP 192.168.1.114 → 8.8.8.8 : 7a:f8:01:0...
 Extracted :	 ('localhost.re', 1, 1)
 	Number of RRs: 2
 	First Resolution: 172.67.163.57
-	Lookup Time: 112 ms
+	Lookup Time: 215 ms
 	(custom) Number of RRs: 2
-	(custom) First Resolution: 172.67.163.57
-	(custom) Lookup Time: 1041 ms
+	(custom) First Resolution: 104.21.50.127
+	(custom) Lookup Time: 638 ms
 	(custom) (RD) Number of RRs: 2
-	(custom) (RD) First Resolution: 172.67.163.57
-	(custom) (RD) Lookup Time: 911 ms
+	(custom) (RD) First Resolution: 104.21.50.127
+	(custom) (RD) Lookup Time: 19 ms
 [Packet 6 ]
 2013-02-27 03:32:54.963226	 : UDP 192.168.1.115 → 8.8.8.8 : 56:e1:01:0...
 Extracted :	 ('daehepharma.com', 1, 1)
 	Number of RRs: 0
 	First Resolution: None
-	Lookup Time: 472 ms
+	Lookup Time: 400 ms
 	(custom) Number of RRs: 0
 	(custom) First Resolution: None
-	(custom) Lookup Time: 14704 ms
+	(custom) Lookup Time: 10053 ms
 	(custom) (RD) Number of RRs: 0
 	(custom) (RD) First Resolution: None
-	(custom) (RD) Lookup Time: 14768 ms
+	(custom) (RD) Lookup Time: 10146 ms
 [Packet 7 ]
 2013-02-27 03:32:55.517416	 : UDP 192.168.1.116 → 8.8.8.8 : dc:71:01:0...
 Extracted :	 ('ex-jw.org', 1, 1)
 	Number of RRs: 3
 	First Resolution: 185.230.63.107
-	Lookup Time: 28 ms
+	Lookup Time: 40 ms
 	(custom) Number of RRs: 3
-	(custom) First Resolution: 185.230.63.107
-	(custom) Lookup Time: 5993 ms
+	(custom) First Resolution: 185.230.63.171
+	(custom) Lookup Time: 6154 ms
 	(custom) (RD) Number of RRs: 3
-	(custom) (RD) First Resolution: 185.230.63.107
-	(custom) (RD) Lookup Time: 6129 ms
+	(custom) (RD) First Resolution: 185.230.63.171
+	(custom) (RD) Lookup Time: 18 ms
 [Packet 8 ]
 2013-02-27 03:32:57.802065	 : UDP 192.168.1.117 → 8.8.8.8 : e0:91:01:0...
 Extracted :	 ('us.tf', 1, 1)
 some issue in nslookup. Check log
 	Number of RRs: 0
 	First Resolution: None
-	Lookup Time: 427 ms
+	Lookup Time: 498 ms
 	(custom) Number of RRs: 0
 	(custom) First Resolution: None
-	(custom) Lookup Time: 12992 ms
+	(custom) Lookup Time: 11696 ms
 	(custom) (RD) Number of RRs: 0
 	(custom) (RD) First Resolution: None
-	(custom) (RD) Lookup Time: 13036 ms
+	(custom) (RD) Lookup Time: 10394 ms
 [Packet 9 ]
 2013-02-27 03:33:00.120052	 : UDP 192.168.1.118 → 8.8.8.8 : 72:98:01:0...
 Extracted :	 ('informarexresistere.fr', 1, 1)
-some issue in nslookup. Check log
-	Number of RRs: 0
-	First Resolution: None
-	Lookup Time: 414 ms
+	Number of RRs: 1
+	First Resolution: 178.32.143.165
+	Lookup Time: 586 ms
 	(custom) Number of RRs: 1
 	(custom) First Resolution: 178.32.143.165
-	(custom) Lookup Time: 1246 ms
+	(custom) Lookup Time: 1131 ms
 	(custom) (RD) Number of RRs: 1
 	(custom) (RD) First Resolution: 178.32.143.165
-	(custom) (RD) Lookup Time: 1252 ms
+	(custom) (RD) Lookup Time: 19 ms
 [Packet 10 ]
 2013-02-27 03:33:00.186702	 : UDP 192.168.1.119 → 8.8.8.8 : b6:00:01:0...
 Extracted :	 ('running-sigi.de', 1, 1)
 	Number of RRs: 0
 	First Resolution: None
-	Lookup Time: 66 ms
+	Lookup Time: 33 ms
 	(custom) Number of RRs: 0
 	(custom) First Resolution: None
-	(custom) Lookup Time: 5778 ms
+	(custom) Lookup Time: 4208 ms
 	(custom) (RD) Number of RRs: 0
 	(custom) (RD) First Resolution: None
-	(custom) (RD) Lookup Time: 10162 ms
+	(custom) (RD) Lookup Time: 4431 ms
 [Packet 11 ]
 2013-02-27 03:33:02.735030	 : UDP 192.168.1.120 → 8.8.8.8 : a8:44:01:0...
 Extracted :	 ('buynowfromusa.com', 1, 1)
 	Number of RRs: 1
 	First Resolution: 35.223.118.1
-	Lookup Time: 102 ms
+	Lookup Time: 98 ms
 	(custom) Number of RRs: 1
 	(custom) First Resolution: 35.223.118.1
 	(custom) Lookup Time: 635 ms
 	(custom) (RD) Number of RRs: 1
 	(custom) (RD) First Resolution: 35.223.118.1
-	(custom) (RD) Lookup Time: 636 ms
+	(custom) (RD) Lookup Time: 20 ms
 [Packet 12 ]
 2013-02-27 03:33:02.779880	 : UDP 192.168.1.121 → 8.8.8.8 : 41:bf:01:0...
 Extracted :	 ('pbprofile.com', 1, 1)
 	Number of RRs: 0
 	First Resolution: None
-	Lookup Time: 74 ms
+	Lookup Time: 184 ms
 	(custom) Number of RRs: 0
 	(custom) First Resolution: None
-	(custom) Lookup Time: 10554 ms
+	(custom) Lookup Time: 11081 ms
 	(custom) (RD) Number of RRs: 0
 	(custom) (RD) First Resolution: None
-	(custom) (RD) Lookup Time: 10725 ms
+	(custom) (RD) Lookup Time: 11090 ms
 [Packet 13 ]
 2013-02-27 03:33:05.062011	 : UDP 192.168.1.122 → 8.8.8.8 : 78:80:01:0...
 Extracted :	 ('fini.net', 1, 1)
@@ -152,818 +151,1055 @@ Extracted :	 ('fini.net', 1, 1)
 	Lookup Time: 31 ms
 	(custom) Number of RRs: 1
 	(custom) First Resolution: 198.57.192.137
-	(custom) Lookup Time: 1068 ms
+	(custom) Lookup Time: 668 ms
 	(custom) (RD) Number of RRs: 1
 	(custom) (RD) First Resolution: 198.57.192.137
-	(custom) (RD) Lookup Time: 669 ms
+	(custom) (RD) Lookup Time: 20 ms
 [Packet 14 ]
 2013-02-27 03:33:09.318688	 : UDP 192.168.1.123 → 8.8.8.8 : fd:e7:01:0...
 Extracted :	 ('globalpoliticalspectrum.com', 1, 1)
 	Number of RRs: 0
 	First Resolution: None
-	Lookup Time: 113 ms
+	Lookup Time: 139 ms
 	(custom) Number of RRs: 0
 	(custom) First Resolution: None
-	(custom) Lookup Time: 10665 ms
+	(custom) Lookup Time: 11185 ms
 	(custom) (RD) Number of RRs: 0
 	(custom) (RD) First Resolution: None
-	(custom) (RD) Lookup Time: 10682 ms
+	(custom) (RD) Lookup Time: 11188 ms
 [Packet 15 ]
 2013-02-27 03:33:09.711968	 : UDP 192.168.1.124 → 8.8.8.8 : b3:9c:01:0...
 Extracted :	 ('41latitude.com', 1, 1)
 	Number of RRs: 0
 	First Resolution: None
-	Lookup Time: 29 ms
+	Lookup Time: 60 ms
 	(custom) Number of RRs: 0
 	(custom) First Resolution: None
-	(custom) Lookup Time: 14222 ms
+	(custom) Lookup Time: 10049 ms
 	(custom) (RD) Number of RRs: 0
 	(custom) (RD) First Resolution: None
-	(custom) (RD) Lookup Time: 14144 ms
+	(custom) (RD) Lookup Time: 14762 ms
 [Packet 16 ]
 2013-02-27 03:33:10.023367	 : UDP 192.168.1.125 → 8.8.8.8 : a3:7c:01:0...
 Extracted :	 ('zzxu.cn', 1, 1)
 	Number of RRs: 0
 	First Resolution: None
-	Lookup Time: 843 ms
+	Lookup Time: 645 ms
 	(custom) Number of RRs: 0
 	(custom) First Resolution: None
-	(custom) Lookup Time: 10056 ms
+	(custom) Lookup Time: 10267 ms
 	(custom) (RD) Number of RRs: 0
 	(custom) (RD) First Resolution: None
-	(custom) (RD) Lookup Time: 10101 ms
+	(custom) (RD) Lookup Time: 10180 ms
 [Packet 17 ]
 2013-02-27 03:33:14.421356	 : UDP 192.168.1.126 → 8.8.8.8 : ea:65:01:0...
 Extracted :	 ('energybulbs.co.uk', 1, 1)
 	Number of RRs: 1
 	First Resolution: 23.227.38.32
-	Lookup Time: 459 ms
+	Lookup Time: 751 ms
 	(custom) Number of RRs: 1
 	(custom) First Resolution: 23.227.38.32
-	(custom) Lookup Time: 1335 ms
+	(custom) Lookup Time: 1013 ms
 	(custom) (RD) Number of RRs: 1
 	(custom) (RD) First Resolution: 23.227.38.32
-	(custom) (RD) Lookup Time: 1296 ms
+	(custom) (RD) Lookup Time: 18 ms
 [Packet 18 ]
 2013-02-27 03:33:19.681440	 : UDP 192.168.1.127 → 8.8.8.8 : a9:02:01:0...
 Extracted :	 ('o-ov.com', 1, 1)
 some issue in nslookup. Check log
 	Number of RRs: 0
 	First Resolution: None
-	Lookup Time: 646 ms
+	Lookup Time: 499 ms
 	(custom) Number of RRs: 0
 	(custom) First Resolution: None
-	(custom) Lookup Time: 10363 ms
+	(custom) Lookup Time: 10058 ms
 	(custom) (RD) Number of RRs: 0
 	(custom) (RD) First Resolution: None
-	(custom) (RD) Lookup Time: 10171 ms
+	(custom) (RD) Lookup Time: 10166 ms
 [Packet 19 ]
 2013-02-27 03:33:22.809639	 : UDP 192.168.1.128 → 8.8.8.8 : 55:b4:01:0...
 Extracted :	 ('lozo.com', 1, 1)
 	Number of RRs: 2
 	First Resolution: 107.21.144.47
-	Lookup Time: 330 ms
+	Lookup Time: 86 ms
 	(custom) Number of RRs: 2
-	(custom) First Resolution: 107.21.144.47
-	(custom) Lookup Time: 741 ms
+	(custom) First Resolution: 34.192.96.224
+	(custom) Lookup Time: 446 ms
 	(custom) (RD) Number of RRs: 2
-	(custom) (RD) First Resolution: 107.21.144.47
-	(custom) (RD) Lookup Time: 1021 ms
+	(custom) (RD) First Resolution: 34.192.96.224
+	(custom) (RD) Lookup Time: 21 ms
 [Packet 20 ]
 2013-02-27 03:33:22.969012	 : UDP 192.168.1.129 → 8.8.8.8 : 56:4d:01:0...
 Extracted :	 ('tottenhamhk.com', 1, 1)
 	Number of RRs: 0
 	First Resolution: None
-	Lookup Time: 97 ms
+	Lookup Time: 76 ms
 	(custom) Number of RRs: 0
 	(custom) First Resolution: None
-	(custom) Lookup Time: 10666 ms
+	(custom) Lookup Time: 11085 ms
 	(custom) (RD) Number of RRs: 0
 	(custom) (RD) First Resolution: None
-	(custom) (RD) Lookup Time: 10682 ms
+	(custom) (RD) Lookup Time: 11197 ms
 [Packet 21 ]
 2013-02-27 03:33:25.458695	 : UDP 192.168.1.130 → 8.8.8.8 : ed:bc:01:0...
 Extracted :	 ('newstetic.com', 1, 1)
 	Number of RRs: 2
-	First Resolution: 172.67.131.89
-	Lookup Time: 1279 ms
+	First Resolution: 104.21.3.241
+	Lookup Time: 236 ms
 	(custom) Number of RRs: 2
-	(custom) First Resolution: 104.21.3.241
-	(custom) Lookup Time: 663 ms
+	(custom) First Resolution: 172.67.131.89
+	(custom) Lookup Time: 363 ms
 	(custom) (RD) Number of RRs: 2
-	(custom) (RD) First Resolution: 104.21.3.241
-	(custom) (RD) Lookup Time: 564 ms
+	(custom) (RD) First Resolution: 172.67.131.89
+	(custom) (RD) Lookup Time: 19 ms
 [Packet 22 ]
 2013-02-27 03:33:25.624298	 : UDP 192.168.1.131 → 8.8.8.8 : f0:ff:01:0...
 Extracted :	 ('triggerfish.se', 1, 1)
 	Number of RRs: 2
 	First Resolution: 162.159.134.42
-	Lookup Time: 437 ms
+	Lookup Time: 230 ms
 	(custom) Number of RRs: 2
 	(custom) First Resolution: 162.159.135.42
-	(custom) Lookup Time: 727 ms
+	(custom) Lookup Time: 548 ms
 	(custom) (RD) Number of RRs: 2
 	(custom) (RD) First Resolution: 162.159.135.42
-	(custom) (RD) Lookup Time: 687 ms
+	(custom) (RD) Lookup Time: 19 ms
 [Packet 23 ]
 2013-02-27 03:33:28.686416	 : UDP 192.168.1.132 → 8.8.8.8 : 71:b8:01:0...
 Extracted :	 ('reprosystems.ru', 1, 1)
 	Number of RRs: 2
 	First Resolution: 104.21.59.11
-	Lookup Time: 425 ms
+	Lookup Time: 874 ms
 	(custom) Number of RRs: 2
-	(custom) First Resolution: 104.21.59.11
-	(custom) Lookup Time: 1280 ms
+	(custom) First Resolution: 172.67.167.102
+	(custom) Lookup Time: 659 ms
 	(custom) (RD) Number of RRs: 2
 	(custom) (RD) First Resolution: 172.67.167.102
-	(custom) (RD) Lookup Time: 1198 ms
+	(custom) (RD) Lookup Time: 21 ms
 [Packet 24 ]
 2013-02-27 03:33:29.112324	 : UDP 192.168.1.133 → 8.8.8.8 : a7:aa:01:0...
 Extracted :	 ('interfloracentral.co.uk', 1, 1)
 	Number of RRs: 1
 	First Resolution: 217.69.32.44
-	Lookup Time: 224 ms
+	Lookup Time: 262 ms
 	(custom) Number of RRs: 1
 	(custom) First Resolution: 217.69.32.44
-	(custom) Lookup Time: 1388 ms
+	(custom) Lookup Time: 708 ms
 	(custom) (RD) Number of RRs: 1
 	(custom) (RD) First Resolution: 217.69.32.44
-	(custom) (RD) Lookup Time: 1555 ms
+	(custom) (RD) Lookup Time: 20 ms
 [Packet 25 ]
 2013-02-27 03:33:35.790576	 : UDP 192.168.1.134 → 8.8.8.8 : 54:57:01:0...
 Extracted :	 ('afairjudgement.com', 1, 1)
 	Number of RRs: 2
-	First Resolution: 104.21.56.56
-	Lookup Time: 272 ms
+	First Resolution: 172.67.178.132
+	Lookup Time: 175 ms
 	(custom) Number of RRs: 2
 	(custom) First Resolution: 104.21.56.56
-	(custom) Lookup Time: 544 ms
+	(custom) Lookup Time: 259 ms
 	(custom) (RD) Number of RRs: 2
-	(custom) (RD) First Resolution: 172.67.178.132
-	(custom) (RD) Lookup Time: 655 ms
+	(custom) (RD) First Resolution: 104.21.56.56
+	(custom) (RD) Lookup Time: 18 ms
 [Packet 26 ]
 2013-02-27 03:33:35.898937	 : UDP 192.168.1.135 → 8.8.8.8 : 54:51:01:0...
 Extracted :	 ('owlcreek.com', 1, 1)
 	Number of RRs: 1
 	First Resolution: 205.178.189.129
-	Lookup Time: 37 ms
+	Lookup Time: 31 ms
 	(custom) Number of RRs: 1
 	(custom) First Resolution: 205.178.189.129
-	(custom) Lookup Time: 693 ms
+	(custom) Lookup Time: 429 ms
 	(custom) (RD) Number of RRs: 1
 	(custom) (RD) First Resolution: 205.178.189.129
-	(custom) (RD) Lookup Time: 511 ms
+	(custom) (RD) Lookup Time: 18 ms
 [Packet 27 ]
 2013-02-27 03:33:35.924934	 : UDP 192.168.1.136 → 8.8.8.8 : 08:33:01:0...
 Extracted :	 ('radioterminal.ru', 1, 1)
 	Number of RRs: 1
 	First Resolution: 188.225.40.161
-	Lookup Time: 632 ms
+	Lookup Time: 668 ms
 	(custom) Number of RRs: 1
 	(custom) First Resolution: 188.225.40.161
-	(custom) Lookup Time: 752 ms
+	(custom) Lookup Time: 540 ms
 	(custom) (RD) Number of RRs: 1
 	(custom) (RD) First Resolution: 188.225.40.161
-	(custom) (RD) Lookup Time: 788 ms
+	(custom) (RD) Lookup Time: 20 ms
 [Packet 28 ]
 2013-02-27 03:33:39.518597	 : UDP 192.168.1.137 → 8.8.8.8 : 15:7e:01:0...
 Extracted :	 ('junio.com', 1, 1)
 	Number of RRs: 1
 	First Resolution: 209.196.144.25
-	Lookup Time: 649 ms
+	Lookup Time: 555 ms
 	(custom) Number of RRs: 1
 	(custom) First Resolution: 209.196.144.25
-	(custom) Lookup Time: 948 ms
+	(custom) Lookup Time: 870 ms
 	(custom) (RD) Number of RRs: 1
 	(custom) (RD) First Resolution: 209.196.144.25
-	(custom) (RD) Lookup Time: 887 ms
+	(custom) (RD) Lookup Time: 20 ms
 [Packet 29 ]
 2013-02-27 03:33:42.512493	 : UDP 192.168.1.138 → 8.8.8.8 : 01:94:01:0...
 Extracted :	 ('ditrblog.com', 1, 1)
 	Number of RRs: 0
 	First Resolution: None
-	Lookup Time: 123 ms
+	Lookup Time: 145 ms
 	(custom) Number of RRs: 0
 	(custom) First Resolution: None
-	(custom) Lookup Time: 10657 ms
+	(custom) Lookup Time: 11584 ms
 	(custom) (RD) Number of RRs: 0
 	(custom) (RD) First Resolution: None
-	(custom) (RD) Lookup Time: 10589 ms
+	(custom) (RD) Lookup Time: 11243 ms
 [Packet 30 ]
 2013-02-27 03:33:53.959605	 : UDP 192.168.1.139 → 8.8.8.8 : eb:a2:01:0...
 Extracted :	 ('alchemedialtd.com', 1, 1)
 	Number of RRs: 1
 	First Resolution: 68.66.224.29
-	Lookup Time: 43 ms
+	Lookup Time: 40 ms
 	(custom) Number of RRs: 1
 	(custom) First Resolution: 68.66.224.29
-	(custom) Lookup Time: 561 ms
+	(custom) Lookup Time: 290 ms
 	(custom) (RD) Number of RRs: 1
 	(custom) (RD) First Resolution: 68.66.224.29
-	(custom) (RD) Lookup Time: 591 ms
+	(custom) (RD) Lookup Time: 18 ms
 [Packet 31 ]
 2013-02-27 03:33:54.445609	 : UDP 192.168.1.140 → 8.8.8.8 : 39:8b:01:0...
 Extracted :	 ('portclydegeneralstore.com', 1, 1)
 	Number of RRs: 4
-	First Resolution: 198.185.159.145
-	Lookup Time: 384 ms
+	First Resolution: 198.49.23.145
+	Lookup Time: 268 ms
 	(custom) Number of RRs: 4
 	(custom) First Resolution: 198.185.159.144
-	(custom) Lookup Time: 753 ms
+	(custom) Lookup Time: 473 ms
 	(custom) (RD) Number of RRs: 4
 	(custom) (RD) First Resolution: 198.185.159.144
-	(custom) (RD) Lookup Time: 642 ms
+	(custom) (RD) Lookup Time: 20 ms
 [Packet 32 ]
 2013-02-27 03:33:54.497741	 : UDP 192.168.1.141 → 8.8.8.8 : 33:a6:01:0...
 Extracted :	 ('alenpuaca.com', 1, 1)
 	Number of RRs: 1
 	First Resolution: 67.205.28.253
-	Lookup Time: 664 ms
+	Lookup Time: 381 ms
 	(custom) Number of RRs: 1
 	(custom) First Resolution: 67.205.28.253
-	(custom) Lookup Time: 444 ms
+	(custom) Lookup Time: 337 ms
 	(custom) (RD) Number of RRs: 1
 	(custom) (RD) First Resolution: 67.205.28.253
-	(custom) (RD) Lookup Time: 775 ms
+	(custom) (RD) Lookup Time: 18 ms
 [Packet 33 ]
 2013-02-27 03:33:56.949680	 : UDP 192.168.1.142 → 8.8.8.8 : e0:11:01:0...
 Extracted :	 ('dj-producer-j-mbargo.com', 1, 1)
 	Number of RRs: 0
 	First Resolution: None
-	Lookup Time: 212 ms
+	Lookup Time: 53 ms
 	(custom) Number of RRs: 0
 	(custom) First Resolution: None
-	(custom) Lookup Time: 10838 ms
+	(custom) Lookup Time: 11095 ms
 	(custom) (RD) Number of RRs: 0
 	(custom) (RD) First Resolution: None
-	(custom) (RD) Lookup Time: 10740 ms
+	(custom) (RD) Lookup Time: 11045 ms
 [Packet 34 ]
 2013-02-27 03:34:02.130556	 : UDP 192.168.1.143 → 8.8.8.8 : 0d:35:01:0...
 Extracted :	 ('iag-inc.com', 1, 1)
 	Number of RRs: 1
 	First Resolution: 103.224.182.253
-	Lookup Time: 37 ms
+	Lookup Time: 38 ms
 	(custom) Number of RRs: 0
 	(custom) First Resolution: None
-	(custom) Lookup Time: 10758 ms
+	(custom) Lookup Time: 10646 ms
 	(custom) (RD) Number of RRs: 0
 	(custom) (RD) First Resolution: None
-	(custom) (RD) Lookup Time: 11115 ms
+	(custom) (RD) Lookup Time: 10379 ms
 [Packet 35 ]
 2013-02-27 03:34:02.198827	 : UDP 192.168.1.144 → 8.8.8.8 : 88:42:01:0...
 Extracted :	 ('advertos.ru', 1, 1)
-some issue in nslookup. Check log
-	Number of RRs: 0
-	First Resolution: None
-	Lookup Time: 315 ms
+	Number of RRs: 1
+	First Resolution: 45.92.176.75
+	Lookup Time: 412 ms
 	(custom) Number of RRs: 1
 	(custom) First Resolution: 45.92.176.75
-	(custom) Lookup Time: 1726 ms
+	(custom) Lookup Time: 1327 ms
 	(custom) (RD) Number of RRs: 1
 	(custom) (RD) First Resolution: 45.92.176.75
-	(custom) (RD) Lookup Time: 1891 ms
+	(custom) (RD) Lookup Time: 18 ms
 [Packet 36 ]
 2013-02-27 03:34:04.925232	 : UDP 192.168.1.145 → 8.8.8.8 : c2:26:01:0...
 Extracted :	 ('kh.ua', 1, 1)
 	Number of RRs: 1
 	First Resolution: 195.69.185.211
-	Lookup Time: 27 ms
+	Lookup Time: 31 ms
 	(custom) Number of RRs: 1
 	(custom) First Resolution: 195.69.185.211
-	(custom) Lookup Time: 669 ms
+	(custom) Lookup Time: 753 ms
 	(custom) (RD) Number of RRs: 1
 	(custom) (RD) First Resolution: 195.69.185.211
-	(custom) (RD) Lookup Time: 564 ms
+	(custom) (RD) Lookup Time: 18 ms
 [Packet 37 ]
 2013-02-27 03:34:10.958406	 : UDP 192.168.1.146 → 8.8.8.8 : 75:29:01:0...
 Extracted :	 ('kennethehartman.com', 1, 1)
 	Number of RRs: 2
 	First Resolution: 192.0.78.25
-	Lookup Time: 313 ms
+	Lookup Time: 282 ms
 	(custom) Number of RRs: 2
-	(custom) First Resolution: 192.0.78.24
-	(custom) Lookup Time: 508 ms
+	(custom) First Resolution: 192.0.78.25
+	(custom) Lookup Time: 300 ms
 	(custom) (RD) Number of RRs: 2
-	(custom) (RD) First Resolution: 192.0.78.24
-	(custom) (RD) Lookup Time: 499 ms
+	(custom) (RD) First Resolution: 192.0.78.25
+	(custom) (RD) Lookup Time: 19 ms
 [Packet 38 ]
 2013-02-27 03:34:16.697094	 : UDP 192.168.1.147 → 8.8.8.8 : a9:70:01:0...
 Extracted :	 ('hemcolubricants.com', 1, 1)
 	Number of RRs: 2
-	First Resolution: 194.9.94.86
-	Lookup Time: 70 ms
+	First Resolution: 194.9.94.85
+	Lookup Time: 295 ms
 	(custom) Number of RRs: 2
-	(custom) First Resolution: 194.9.94.85
-	(custom) Lookup Time: 1335 ms
+	(custom) First Resolution: 194.9.94.86
+	(custom) Lookup Time: 689 ms
 	(custom) (RD) Number of RRs: 2
-	(custom) (RD) First Resolution: 194.9.94.85
-	(custom) (RD) Lookup Time: 1250 ms
+	(custom) (RD) First Resolution: 194.9.94.86
+	(custom) (RD) Lookup Time: 18 ms
 [Packet 39 ]
 2013-02-27 03:34:21.269578	 : UDP 192.168.1.148 → 8.8.8.8 : 73:8f:01:0...
 Extracted :	 ('forpsi.net', 1, 1)
 	Number of RRs: 1
 	First Resolution: 85.255.6.237
-	Lookup Time: 383 ms
+	Lookup Time: 32 ms
 	(custom) Number of RRs: 1
 	(custom) First Resolution: 85.255.6.237
-	(custom) Lookup Time: 749 ms
+	(custom) Lookup Time: 472 ms
 	(custom) (RD) Number of RRs: 1
 	(custom) (RD) First Resolution: 85.255.6.237
-	(custom) (RD) Lookup Time: 737 ms
+	(custom) (RD) Lookup Time: 26 ms
 [Packet 40 ]
 2013-02-27 03:34:26.091760	 : UDP 192.168.1.149 → 8.8.8.8 : dd:01:01:0...
 Extracted :	 ('memeblender.com', 1, 1)
 	Number of RRs: 2
-	First Resolution: 104.21.7.158
-	Lookup Time: 531 ms
+	First Resolution: 172.67.136.240
+	Lookup Time: 243 ms
 	(custom) Number of RRs: 2
 	(custom) First Resolution: 104.21.7.158
-	(custom) Lookup Time: 580 ms
+	(custom) Lookup Time: 365 ms
 	(custom) (RD) Number of RRs: 2
-	(custom) (RD) First Resolution: 172.67.136.240
-	(custom) (RD) Lookup Time: 664 ms
+	(custom) (RD) First Resolution: 104.21.7.158
+	(custom) (RD) Lookup Time: 19 ms
 [Packet 41 ]
 2013-02-27 03:34:26.194491	 : UDP 192.168.1.150 → 8.8.8.8 : ea:ec:01:0...
 Extracted :	 ('somode.com', 1, 1)
 	Number of RRs: 0
 	First Resolution: None
-	Lookup Time: 217 ms
+	Lookup Time: 165 ms
 	(custom) Number of RRs: 0
 	(custom) First Resolution: None
-	(custom) Lookup Time: 10635 ms
+	(custom) Lookup Time: 11039 ms
 	(custom) (RD) Number of RRs: 0
 	(custom) (RD) First Resolution: None
-	(custom) (RD) Lookup Time: 10639 ms
+	(custom) (RD) Lookup Time: 11101 ms
 [Packet 42 ]
 2013-02-27 03:34:30.398332	 : UDP 192.168.1.151 → 8.8.8.8 : d6:d1:01:0...
 Extracted :	 ('gamemob.com', 1, 1)
 	Number of RRs: 2
-	First Resolution: 15.197.148.33
-	Lookup Time: 433 ms
+	First Resolution: 3.33.130.190
+	Lookup Time: 561 ms
 	(custom) Number of RRs: 2
 	(custom) First Resolution: 3.33.130.190
-	(custom) Lookup Time: 632 ms
+	(custom) Lookup Time: 394 ms
 	(custom) (RD) Number of RRs: 2
 	(custom) (RD) First Resolution: 3.33.130.190
-	(custom) (RD) Lookup Time: 672 ms
+	(custom) (RD) Lookup Time: 19 ms
 [Packet 43 ]
 2013-02-27 03:34:30.497105	 : UDP 192.168.1.152 → 8.8.8.8 : 14:7a:01:0...
 Extracted :	 ('monsterhomesecuritystore.com', 1, 1)
 	Number of RRs: 0
 	First Resolution: None
-	Lookup Time: 316 ms
+	Lookup Time: 246 ms
 	(custom) Number of RRs: 0
 	(custom) First Resolution: None
-	(custom) Lookup Time: 10632 ms
+	(custom) Lookup Time: 11021 ms
 	(custom) (RD) Number of RRs: 0
 	(custom) (RD) First Resolution: None
-	(custom) (RD) Lookup Time: 10648 ms
+	(custom) (RD) Lookup Time: 11325 ms
 [Packet 44 ]
 2013-02-27 03:34:30.585822	 : UDP 192.168.1.153 → 8.8.8.8 : 5b:87:01:0...
 Extracted :	 ('door2games.com', 1, 1)
 	Number of RRs: 1
 	First Resolution: 160.153.0.43
-	Lookup Time: 27 ms
+	Lookup Time: 552 ms
 	(custom) Number of RRs: 1
 	(custom) First Resolution: 160.153.0.43
-	(custom) Lookup Time: 650 ms
+	(custom) Lookup Time: 541 ms
 	(custom) (RD) Number of RRs: 1
 	(custom) (RD) First Resolution: 160.153.0.43
-	(custom) (RD) Lookup Time: 774 ms
+	(custom) (RD) Lookup Time: 18 ms
 [Packet 45 ]
 2013-02-27 03:34:30.826665	 : UDP 192.168.1.154 → 8.8.8.8 : 43:31:01:0...
 Extracted :	 ('ondemandappliancerepair.com', 1, 1)
 some issue in nslookup. Check log
 	Number of RRs: 0
 	First Resolution: None
-	Lookup Time: 321 ms
+	Lookup Time: 245 ms
 	(custom) Number of RRs: 1
 	(custom) First Resolution: 74.208.236.102
-	(custom) Lookup Time: 656 ms
+	(custom) Lookup Time: 448 ms
 	(custom) (RD) Number of RRs: 1
 	(custom) (RD) First Resolution: 74.208.236.102
-	(custom) (RD) Lookup Time: 667 ms
+	(custom) (RD) Lookup Time: 22 ms
 [Packet 46 ]
 2013-02-27 03:34:33.739976	 : UDP 192.168.1.155 → 8.8.8.8 : 89:06:01:0...
 Extracted :	 ('gensee.com', 1, 1)
 	Number of RRs: 1
 	First Resolution: 211.150.89.25
-	Lookup Time: 930 ms
+	Lookup Time: 466 ms
 	(custom) Number of RRs: 1
 	(custom) First Resolution: 211.150.89.25
-	(custom) Lookup Time: 625 ms
+	(custom) Lookup Time: 439 ms
 	(custom) (RD) Number of RRs: 1
 	(custom) (RD) First Resolution: 211.150.89.25
-	(custom) (RD) Lookup Time: 639 ms
+	(custom) (RD) Lookup Time: 21 ms
 [Packet 47 ]
 2013-02-27 03:34:33.816229	 : UDP 192.168.1.156 → 8.8.8.8 : af:30:01:0...
 Extracted :	 ('caricsports.com', 1, 1)
 	Number of RRs: 2
-	First Resolution: 172.67.216.98
-	Lookup Time: 301 ms
+	First Resolution: 104.21.51.12
+	Lookup Time: 328 ms
 	(custom) Number of RRs: 2
 	(custom) First Resolution: 172.67.216.98
-	(custom) Lookup Time: 652 ms
+	(custom) Lookup Time: 562 ms
 	(custom) (RD) Number of RRs: 2
 	(custom) (RD) First Resolution: 172.67.216.98
-	(custom) (RD) Lookup Time: 703 ms
+	(custom) (RD) Lookup Time: 18 ms
 [Packet 48 ]
 2013-02-27 03:34:36.048205	 : UDP 192.168.1.157 → 8.8.8.8 : 67:68:01:0...
 Extracted :	 ('auqzzx.com', 1, 1)
 	Number of RRs: 0
 	First Resolution: None
-	Lookup Time: 1035 ms
+	Lookup Time: 253 ms
 	(custom) Number of RRs: 0
 	(custom) First Resolution: None
-	(custom) Lookup Time: 10761 ms
+	(custom) Lookup Time: 11288 ms
 	(custom) (RD) Number of RRs: 0
 	(custom) (RD) First Resolution: None
-	(custom) (RD) Lookup Time: 10769 ms
+	(custom) (RD) Lookup Time: 11081 ms
 [Packet 49 ]
 2013-02-27 03:34:36.170669	 : UDP 192.168.1.158 → 8.8.8.8 : 6a:f4:01:0...
 Extracted :	 ('toaskfuture.com', 1, 1)
 	Number of RRs: 1
 	First Resolution: 119.18.54.195
-	Lookup Time: 1214 ms
+	Lookup Time: 35 ms
 	(custom) Number of RRs: 1
 	(custom) First Resolution: 119.18.54.195
-	(custom) Lookup Time: 548 ms
+	(custom) Lookup Time: 466 ms
 	(custom) (RD) Number of RRs: 1
 	(custom) (RD) First Resolution: 119.18.54.195
-	(custom) (RD) Lookup Time: 756 ms
+	(custom) (RD) Lookup Time: 18 ms
 [Packet 50 ]
 2013-02-27 03:34:36.189097	 : UDP 192.168.1.159 → 8.8.8.8 : 45:19:01:0...
 Extracted :	 ('cetsi.fr', 1, 1)
 	Number of RRs: 1
 	First Resolution: 91.151.64.24
-	Lookup Time: 27 ms
+	Lookup Time: 38 ms
 	(custom) Number of RRs: 1
 	(custom) First Resolution: 91.151.64.24
-	(custom) Lookup Time: 648 ms
+	(custom) Lookup Time: 539 ms
 	(custom) (RD) Number of RRs: 1
 	(custom) (RD) First Resolution: 91.151.64.24
-	(custom) (RD) Lookup Time: 779 ms
+	(custom) (RD) Lookup Time: 19 ms
 [Packet 51 ]
 2013-02-27 03:34:36.239771	 : UDP 192.168.1.160 → 8.8.8.8 : 73:3b:01:0...
 Extracted :	 ('probigbets.com', 1, 1)
 	Number of RRs: 0
 	First Resolution: None
-	Lookup Time: 1054 ms
+	Lookup Time: 177 ms
 	(custom) Number of RRs: 0
 	(custom) First Resolution: None
-	(custom) Lookup Time: 10744 ms
+	(custom) Lookup Time: 11063 ms
 	(custom) (RD) Number of RRs: 0
 	(custom) (RD) First Resolution: None
-	(custom) (RD) Lookup Time: 10667 ms
+	(custom) (RD) Lookup Time: 11321 ms
 [Packet 52 ]
 2013-02-27 03:34:37.943601	 : UDP 192.168.1.161 → 8.8.8.8 : 4a:04:01:0...
 Extracted :	 ('bikesandtransit.com', 1, 1)
 	Number of RRs: 2
 	First Resolution: 192.0.78.25
-	Lookup Time: 284 ms
+	Lookup Time: 1286 ms
 	(custom) Number of RRs: 2
-	(custom) First Resolution: 192.0.78.24
-	(custom) Lookup Time: 560 ms
+	(custom) First Resolution: 192.0.78.25
+	(custom) Lookup Time: 541 ms
 	(custom) (RD) Number of RRs: 2
-	(custom) (RD) First Resolution: 192.0.78.24
-	(custom) (RD) Lookup Time: 854 ms
+	(custom) (RD) First Resolution: 192.0.78.25
+	(custom) (RD) Lookup Time: 20 ms
 [Packet 53 ]
 2013-02-27 03:34:45.905270	 : UDP 192.168.1.162 → 8.8.8.8 : ce:25:01:0...
 Extracted :	 ('aqvr.com', 1, 1)
 	Number of RRs: 1
 	First Resolution: 89.117.19.57
-	Lookup Time: 741 ms
+	Lookup Time: 1607 ms
 	(custom) Number of RRs: 1
 	(custom) First Resolution: 89.117.19.57
-	(custom) Lookup Time: 884 ms
+	(custom) Lookup Time: 514 ms
 	(custom) (RD) Number of RRs: 1
 	(custom) (RD) First Resolution: 89.117.19.57
-	(custom) (RD) Lookup Time: 875 ms
+	(custom) (RD) Lookup Time: 21 ms
 [Packet 54 ]
 2013-02-27 03:34:52.563922	 : UDP 192.168.1.163 → 8.8.8.8 : f6:94:01:0...
 Extracted :	 ('niceinternetmoney.ru', 1, 1)
 	Number of RRs: 0
 	First Resolution: None
-	Lookup Time: 53 ms
+	Lookup Time: 30 ms
 	(custom) Number of RRs: 0
 	(custom) First Resolution: None
-	(custom) Lookup Time: 6464 ms
+	(custom) Lookup Time: 5285 ms
 	(custom) (RD) Number of RRs: 0
 	(custom) (RD) First Resolution: None
-	(custom) (RD) Lookup Time: 6731 ms
+	(custom) (RD) Lookup Time: 4535 ms
 [Packet 55 ]
 2013-02-27 03:34:55.242384	 : UDP 192.168.1.164 → 8.8.8.8 : 6e:a5:01:0...
 Extracted :	 ('chonvn.com', 1, 1)
 	Number of RRs: 0
 	First Resolution: None
-	Lookup Time: 1819 ms
+	Lookup Time: 227 ms
 	(custom) Number of RRs: 0
 	(custom) First Resolution: None
-	(custom) Lookup Time: 10847 ms
+	(custom) Lookup Time: 11177 ms
 	(custom) (RD) Number of RRs: 0
 	(custom) (RD) First Resolution: None
-	(custom) (RD) Lookup Time: 10692 ms
+	(custom) (RD) Lookup Time: 11072 ms
 [Packet 56 ]
 2013-02-27 03:34:57.637641	 : UDP 192.168.1.165 → 8.8.8.8 : 7f:d6:01:0...
 Extracted :	 ('eugenbotnar.com', 1, 1)
 	Number of RRs: 0
 	First Resolution: None
-	Lookup Time: 141 ms
+	Lookup Time: 431 ms
 	(custom) Number of RRs: 0
 	(custom) First Resolution: None
-	(custom) Lookup Time: 10628 ms
+	(custom) Lookup Time: 11048 ms
 	(custom) (RD) Number of RRs: 0
 	(custom) (RD) First Resolution: None
-	(custom) (RD) Lookup Time: 10819 ms
+	(custom) (RD) Lookup Time: 11224 ms
 [Packet 57 ]
 2013-02-27 03:34:57.835166	 : UDP 192.168.1.166 → 8.8.8.8 : 10:78:01:0...
 Extracted :	 ('phi-pe.com', 1, 1)
 	Number of RRs: 0
 	First Resolution: None
-	Lookup Time: 178 ms
+	Lookup Time: 337 ms
 	(custom) Number of RRs: 0
 	(custom) First Resolution: None
-	(custom) Lookup Time: 10717 ms
+	(custom) Lookup Time: 10872 ms
 	(custom) (RD) Number of RRs: 0
 	(custom) (RD) First Resolution: None
-	(custom) (RD) Lookup Time: 10655 ms
+	(custom) (RD) Lookup Time: 11115 ms
 [Packet 58 ]
 2013-02-27 03:35:00.551749	 : UDP 192.168.1.167 → 8.8.8.8 : 3f:cb:01:0...
 Extracted :	 ('chuamatsua.com', 1, 1)
 some issue in nslookup. Check log
 	Number of RRs: 0
 	First Resolution: None
-	Lookup Time: 944 ms
+	Lookup Time: 1361 ms
 	(custom) Number of RRs: 0
 	(custom) First Resolution: None
-	(custom) Lookup Time: 11325 ms
+	(custom) Lookup Time: 12984 ms
 	(custom) (RD) Number of RRs: 0
 	(custom) (RD) First Resolution: None
-	(custom) (RD) Lookup Time: 11207 ms
+	(custom) (RD) Lookup Time: 10081 ms
 [Packet 59 ]
 2013-02-27 03:35:02.200642	 : UDP 192.168.1.168 → 8.8.8.8 : 85:98:01:0...
 Extracted :	 ('pictures-thailand.com', 1, 1)
 	Number of RRs: 1
 	First Resolution: 66.96.149.1
-	Lookup Time: 48 ms
+	Lookup Time: 1257 ms
 	(custom) Number of RRs: 1
 	(custom) First Resolution: 66.96.149.1
-	(custom) Lookup Time: 589 ms
+	(custom) Lookup Time: 536 ms
 	(custom) (RD) Number of RRs: 1
 	(custom) (RD) First Resolution: 66.96.149.1
-	(custom) (RD) Lookup Time: 870 ms
+	(custom) (RD) Lookup Time: 20 ms
 [Packet 60 ]
 2013-02-27 03:35:03.586553	 : UDP 192.168.1.169 → 8.8.8.8 : b8:69:01:0...
 Extracted :	 ('2brightsparks.co.uk', 1, 1)
 	Number of RRs: 4
-	First Resolution: 143.204.55.11
-	Lookup Time: 378 ms
+	First Resolution: 143.204.55.7
+	Lookup Time: 539 ms
 	(custom) Number of RRs: 4
-	(custom) First Resolution: 143.204.55.11
-	(custom) Lookup Time: 1314 ms
+	(custom) First Resolution: 143.204.55.7
+	(custom) Lookup Time: 558 ms
 	(custom) (RD) Number of RRs: 4
-	(custom) (RD) First Resolution: 143.204.55.129
-	(custom) (RD) Lookup Time: 1394 ms
+	(custom) (RD) First Resolution: 143.204.55.7
+	(custom) (RD) Lookup Time: 19 ms
 [Packet 61 ]
 2013-02-27 03:35:03.690311	 : UDP 192.168.1.170 → 8.8.8.8 : c9:fc:01:0...
 Extracted :	 ('astrumonline.ru', 1, 1)
 	Number of RRs: 1
 	First Resolution: 217.69.136.59
-	Lookup Time: 379 ms
+	Lookup Time: 545 ms
 	(custom) Number of RRs: 1
 	(custom) First Resolution: 217.69.136.59
-	(custom) Lookup Time: 1612 ms
+	(custom) Lookup Time: 702 ms
 	(custom) (RD) Number of RRs: 1
 	(custom) (RD) First Resolution: 217.69.136.59
-	(custom) (RD) Lookup Time: 1445 ms
+	(custom) (RD) Lookup Time: 19 ms
 [Packet 62 ]
 2013-02-27 03:35:03.737246	 : UDP 192.168.1.171 → 8.8.8.8 : 8d:6a:01:0...
 Extracted :	 ('blueridgelife.com', 1, 1)
 	Number of RRs: 1
 	First Resolution: 192.124.249.6
-	Lookup Time: 28 ms
+	Lookup Time: 37 ms
 	(custom) Number of RRs: 1
 	(custom) First Resolution: 192.124.249.6
-	(custom) Lookup Time: 550 ms
+	(custom) Lookup Time: 524 ms
 	(custom) (RD) Number of RRs: 1
 	(custom) (RD) First Resolution: 192.124.249.6
-	(custom) (RD) Lookup Time: 689 ms
+	(custom) (RD) Lookup Time: 19 ms
 [Packet 63 ]
 2013-02-27 03:35:08.705858	 : UDP 192.168.1.172 → 8.8.8.8 : 20:f5:01:0...
 Extracted :	 ('mwzip.com', 1, 1)
 	Number of RRs: 2
 	First Resolution: 104.21.20.205
-	Lookup Time: 338 ms
+	Lookup Time: 479 ms
 	(custom) Number of RRs: 2
-	(custom) First Resolution: 172.67.194.102
-	(custom) Lookup Time: 442 ms
+	(custom) First Resolution: 104.21.20.205
+	(custom) Lookup Time: 335 ms
 	(custom) (RD) Number of RRs: 2
 	(custom) (RD) First Resolution: 104.21.20.205
-	(custom) (RD) Lookup Time: 590 ms
+	(custom) (RD) Lookup Time: 18 ms
 [Packet 64 ]
 2013-02-27 03:35:09.064376	 : UDP 192.168.1.173 → 8.8.8.8 : 20:5a:01:0...
 Extracted :	 ('gusbi.com', 1, 1)
 	Number of RRs: 1
 	First Resolution: 185.145.195.19
-	Lookup Time: 42 ms
+	Lookup Time: 656 ms
 	(custom) Number of RRs: 1
 	(custom) First Resolution: 185.145.195.19
-	(custom) Lookup Time: 735 ms
+	(custom) Lookup Time: 526 ms
 	(custom) (RD) Number of RRs: 1
 	(custom) (RD) First Resolution: 185.145.195.19
-	(custom) (RD) Lookup Time: 796 ms
+	(custom) (RD) Lookup Time: 18 ms
 [Packet 65 ]
 2013-02-27 03:35:15.284953	 : UDP 192.168.1.174 → 8.8.8.8 : 78:24:01:0...
 Extracted :	 ('simternet.com', 1, 1)
 	Number of RRs: 2
-	First Resolution: 15.197.225.128
-	Lookup Time: 51 ms
+	First Resolution: 3.33.251.168
+	Lookup Time: 602 ms
 	(custom) Number of RRs: 2
 	(custom) First Resolution: 15.197.225.128
-	(custom) Lookup Time: 822 ms
+	(custom) Lookup Time: 436 ms
 	(custom) (RD) Number of RRs: 2
 	(custom) (RD) First Resolution: 15.197.225.128
-	(custom) (RD) Lookup Time: 841 ms
+	(custom) (RD) Lookup Time: 24 ms
 [Packet 66 ]
 2013-02-27 03:35:15.562192	 : UDP 192.168.1.175 → 8.8.8.8 : 0e:36:01:0...
 Extracted :	 ('khsm.ru', 1, 1)
 	Number of RRs: 1
 	First Resolution: 91.247.37.5
-	Lookup Time: 39 ms
+	Lookup Time: 763 ms
 	(custom) Number of RRs: 1
 	(custom) First Resolution: 91.247.37.5
-	(custom) Lookup Time: 1470 ms
+	(custom) Lookup Time: 960 ms
 	(custom) (RD) Number of RRs: 1
 	(custom) (RD) First Resolution: 91.247.37.5
-	(custom) (RD) Lookup Time: 1404 ms
+	(custom) (RD) Lookup Time: 18 ms
 [Packet 67 ]
 2013-02-27 03:35:18.437942	 : UDP 192.168.1.176 → 8.8.8.8 : d1:49:01:0...
 Extracted :	 ('livelinks.com', 1, 1)
 	Number of RRs: 4
-	First Resolution: 108.158.61.13
-	Lookup Time: 123 ms
+	First Resolution: 108.158.61.89
+	Lookup Time: 347 ms
 	(custom) Number of RRs: 4
-	(custom) First Resolution: 108.158.61.12
-	(custom) Lookup Time: 597 ms
+	(custom) First Resolution: 108.158.61.89
+	(custom) Lookup Time: 532 ms
 	(custom) (RD) Number of RRs: 4
 	(custom) (RD) First Resolution: 108.158.61.89
-	(custom) (RD) Lookup Time: 507 ms
+	(custom) (RD) Lookup Time: 18 ms
 [Packet 68 ]
 2013-02-27 03:35:18.485077	 : UDP 192.168.1.177 → 8.8.8.8 : 40:19:01:0...
 Extracted :	 ('jantv.in', 1, 1)
 	Number of RRs: 2
-	First Resolution: 172.67.132.252
-	Lookup Time: 409 ms
+	First Resolution: 104.21.5.51
+	Lookup Time: 582 ms
 	(custom) Number of RRs: 2
 	(custom) First Resolution: 172.67.132.252
-	(custom) Lookup Time: 1621 ms
+	(custom) Lookup Time: 546 ms
 	(custom) (RD) Number of RRs: 2
-	(custom) (RD) First Resolution: 104.21.5.51
-	(custom) (RD) Lookup Time: 1174 ms
+	(custom) (RD) First Resolution: 172.67.132.252
+	(custom) (RD) Lookup Time: 23 ms
 [Packet 69 ]
 2013-02-27 03:35:18.638151	 : UDP 192.168.1.178 → 8.8.8.8 : f7:f7:01:0...
 Extracted :	 ('hornil.com', 1, 1)
 	Number of RRs: 1
 	First Resolution: 183.111.138.226
-	Lookup Time: 533 ms
+	Lookup Time: 539 ms
 	(custom) Number of RRs: 1
 	(custom) First Resolution: 183.111.138.226
-	(custom) Lookup Time: 822 ms
+	(custom) Lookup Time: 419 ms
 	(custom) (RD) Number of RRs: 1
 	(custom) (RD) First Resolution: 183.111.138.226
-	(custom) (RD) Lookup Time: 666 ms
+	(custom) (RD) Lookup Time: 19 ms
 [Packet 70 ]
 2013-02-27 03:35:24.781785	 : UDP 192.168.1.179 → 8.8.8.8 : d7:34:01:0...
 Extracted :	 ('7dfps.com', 1, 1)
 	Number of RRs: 2
-	First Resolution: 172.67.161.32
-	Lookup Time: 395 ms
+	First Resolution: 104.21.9.172
+	Lookup Time: 281 ms
 	(custom) Number of RRs: 2
 	(custom) First Resolution: 104.21.9.172
-	(custom) Lookup Time: 519 ms
+	(custom) Lookup Time: 449 ms
 	(custom) (RD) Number of RRs: 2
 	(custom) (RD) First Resolution: 104.21.9.172
-	(custom) (RD) Lookup Time: 858 ms
+	(custom) (RD) Lookup Time: 18 ms
 [Packet 71 ]
 2013-02-27 03:35:24.792092	 : UDP 192.168.1.180 → 8.8.8.8 : d2:8b:01:0...
 Extracted :	 ('luckypuppygames.com', 1, 1)
 	Number of RRs: 6
-	First Resolution: 172.237.146.38
-	Lookup Time: 534 ms
+	First Resolution: 172.237.146.25
+	Lookup Time: 535 ms
 	(custom) Number of RRs: 6
-	(custom) First Resolution: 172.237.146.38
-	(custom) Lookup Time: 761 ms
+	(custom) First Resolution: 172.237.146.25
+	(custom) Lookup Time: 890 ms
 	(custom) (RD) Number of RRs: 6
-	(custom) (RD) First Resolution: 172.237.146.38
-	(custom) (RD) Lookup Time: 775 ms
+	(custom) (RD) First Resolution: 172.237.146.25
+	(custom) (RD) Lookup Time: 18 ms
 [Packet 72 ]
 2013-02-27 03:35:25.019880	 : UDP 192.168.1.181 → 8.8.8.8 : 89:94:01:0...
 Extracted :	 ('b-matrix.com', 1, 1)
 	Number of RRs: 1
 	First Resolution: 137.135.108.176
-	Lookup Time: 511 ms
+	Lookup Time: 1285 ms
 	(custom) Number of RRs: 1
 	(custom) First Resolution: 137.135.108.176
-	(custom) Lookup Time: 676 ms
+	(custom) Lookup Time: 419 ms
 	(custom) (RD) Number of RRs: 1
 	(custom) (RD) First Resolution: 137.135.108.176
-	(custom) (RD) Lookup Time: 769 ms
+	(custom) (RD) Lookup Time: 20 ms
 [Packet 73 ]
 2013-02-27 03:35:25.161678	 : UDP 192.168.1.182 → 8.8.8.8 : 1c:28:01:0...
 Extracted :	 ('coutureauchocolat.com', 1, 1)
 	Number of RRs: 0
 	First Resolution: None
-	Lookup Time: 224 ms
+	Lookup Time: 267 ms
 	(custom) Number of RRs: 0
 	(custom) First Resolution: None
-	(custom) Lookup Time: 10756 ms
+	(custom) Lookup Time: 11096 ms
 	(custom) (RD) Number of RRs: 0
 	(custom) (RD) First Resolution: None
-	(custom) (RD) Lookup Time: 10808 ms
+	(custom) (RD) Lookup Time: 11100 ms
 [Packet 74 ]
 2013-02-27 03:35:28.033950	 : UDP 192.168.1.183 → 8.8.8.8 : 58:b6:01:0...
 Extracted :	 ('afresnohomeinspector.com', 1, 1)
 	Number of RRs: 1
 	First Resolution: 67.225.203.79
-	Lookup Time: 651 ms
+	Lookup Time: 1920 ms
 	(custom) Number of RRs: 1
 	(custom) First Resolution: 67.225.203.79
-	(custom) Lookup Time: 1493 ms
+	(custom) Lookup Time: 649 ms
 	(custom) (RD) Number of RRs: 1
 	(custom) (RD) First Resolution: 67.225.203.79
-	(custom) (RD) Lookup Time: 1581 ms
+	(custom) (RD) Lookup Time: 20 ms
 [Packet 75 ]
 2013-02-27 03:35:28.214303	 : UDP 192.168.1.184 → 8.8.8.8 : 20:fc:01:0...
 Extracted :	 ('pieceinch.com', 1, 1)
 	Number of RRs: 2
 	First Resolution: 172.67.201.136
-	Lookup Time: 485 ms
+	Lookup Time: 732 ms
 	(custom) Number of RRs: 2
 	(custom) First Resolution: 104.21.66.64
-	(custom) Lookup Time: 525 ms
+	(custom) Lookup Time: 533 ms
 	(custom) (RD) Number of RRs: 2
-	(custom) (RD) First Resolution: 172.67.201.136
-	(custom) (RD) Lookup Time: 767 ms
+	(custom) (RD) First Resolution: 104.21.66.64
+	(custom) (RD) Lookup Time: 19 ms
 [Packet 76 ]
 2013-02-27 03:35:28.522845	 : UDP 192.168.1.185 → 8.8.8.8 : 3b:a4:01:0...
 Extracted :	 ('australiatradenow.com', 1, 1)
 	Number of RRs: 2
 	First Resolution: 52.77.97.73
-	Lookup Time: 444 ms
+	Lookup Time: 220 ms
 	(custom) Number of RRs: 2
-	(custom) First Resolution: 52.221.30.142
-	(custom) Lookup Time: 475 ms
+	(custom) First Resolution: 52.77.97.73
+	(custom) Lookup Time: 314 ms
 	(custom) (RD) Number of RRs: 2
-	(custom) (RD) First Resolution: 52.221.30.142
-	(custom) (RD) Lookup Time: 529 ms
+	(custom) (RD) First Resolution: 52.77.97.73
+	(custom) (RD) Lookup Time: 18 ms
 [Packet 77 ]
 2013-02-27 03:35:28.547702	 : UDP 192.168.1.186 → 8.8.8.8 : 63:ad:01:0...
 Extracted :	 ('diamondknot.com', 1, 1)
 	Number of RRs: 4
-	First Resolution: 198.185.159.144
-	Lookup Time: 541 ms
+	First Resolution: 198.49.23.144
+	Lookup Time: 422 ms
 	(custom) Number of RRs: 4
 	(custom) First Resolution: 198.185.159.144
-	(custom) Lookup Time: 645 ms
+	(custom) Lookup Time: 377 ms
 	(custom) (RD) Number of RRs: 4
 	(custom) (RD) First Resolution: 198.185.159.144
-	(custom) (RD) Lookup Time: 743 ms
+	(custom) (RD) Lookup Time: 22 ms
 [Packet 78 ]
 2013-02-27 03:35:28.809408	 : UDP 192.168.1.187 → 8.8.8.8 : 31:39:01:0...
 Extracted :	 ('amorefieldlife.com', 1, 1)
 	Number of RRs: 1
 	First Resolution: 162.241.226.124
-	Lookup Time: 39 ms
+	Lookup Time: 34 ms
 	(custom) Number of RRs: 1
 	(custom) First Resolution: 162.241.226.124
-	(custom) Lookup Time: 561 ms
+	(custom) Lookup Time: 332 ms
 	(custom) (RD) Number of RRs: 1
 	(custom) (RD) First Resolution: 162.241.226.124
-	(custom) (RD) Lookup Time: 855 ms
+	(custom) (RD) Lookup Time: 21 ms
 [Packet 79 ]
 2013-02-27 03:35:30.761449	 : UDP 192.168.1.188 → 8.8.8.8 : 17:43:01:0...
 Extracted :	 ('sheltercoveinn.com', 1, 1)
 	Number of RRs: 0
 	First Resolution: None
-	Lookup Time: 670 ms
+	Lookup Time: 1494 ms
 	(custom) Number of RRs: 0
 	(custom) First Resolution: None
-	(custom) Lookup Time: 10305 ms
+	(custom) Lookup Time: 10206 ms
 	(custom) (RD) Number of RRs: 0
 	(custom) (RD) First Resolution: None
-	(custom) (RD) Lookup Time: 10326 ms
+	(custom) (RD) Lookup Time: 10028 ms
 [Packet 80 ]
 2013-02-27 03:35:37.908376	 : UDP 192.168.1.189 → 8.8.8.8 : ce:4f:01:0...
 Extracted :	 ('wrestlingfanssuck.com', 1, 1)
-	Number of RRs: 1
-	First Resolution: 62.149.128.40
-	Lookup Time: 40 ms
+some issue in nslookup. Check log
+	Number of RRs: 0
+	First Resolution: None
+	Lookup Time: 224 ms
 	(custom) Number of RRs: 1
 	(custom) First Resolution: 62.149.128.40
-	(custom) Lookup Time: 729 ms
+	(custom) Lookup Time: 434 ms
 	(custom) (RD) Number of RRs: 1
 	(custom) (RD) First Resolution: 62.149.128.40
-	(custom) (RD) Lookup Time: 775 ms
+	(custom) (RD) Lookup Time: 18 ms
 [Packet 81 ]
 2013-02-27 03:35:37.950671	 : UDP 192.168.1.190 → 8.8.8.8 : 75:d3:01:0...
 Extracted :	 ('sdccdonline.net', 1, 1)
+	Number of RRs: 1
+	First Resolution: 209.129.16.41
+	Lookup Time: 31 ms
+	(custom) Number of RRs: 0
+	(custom) First Resolution: None
+	(custom) Lookup Time: 10309 ms
+	(custom) (RD) Number of RRs: 0
+	(custom) (RD) First Resolution: None
+	(custom) (RD) Lookup Time: 10234 ms
+[Packet 82 ]
+2013-02-27 03:35:38.263757	 : UDP 192.168.1.191 → 8.8.8.8 : 9f:3d:01:0...
+Extracted :	 ('autofirenze.biz', 1, 1)
+	Number of RRs: 1
+	First Resolution: 89.46.109.17
+	Lookup Time: 538 ms
+	(custom) Number of RRs: 1
+	(custom) First Resolution: 89.46.109.17
+	(custom) Lookup Time: 335 ms
+	(custom) (RD) Number of RRs: 1
+	(custom) (RD) First Resolution: 89.46.109.17
+	(custom) (RD) Lookup Time: 19 ms
+[Packet 83 ]
+2013-02-27 03:35:44.491375	 : UDP 192.168.1.192 → 8.8.8.8 : f3:d7:01:0...
+Extracted :	 ('house-sg.com', 1, 1)
+	Number of RRs: 1
+	First Resolution: 208.98.40.27
+	Lookup Time: 1090 ms
+	(custom) Number of RRs: 1
+	(custom) First Resolution: 208.98.40.207
+	(custom) Lookup Time: 1547 ms
+	(custom) (RD) Number of RRs: 1
+	(custom) (RD) First Resolution: 208.98.40.207
+	(custom) (RD) Lookup Time: 20 ms
+[Packet 84 ]
+2013-02-27 03:35:44.574302	 : UDP 192.168.1.193 → 8.8.8.8 : 44:37:01:0...
+Extracted :	 ('camcard.com', 1, 1)
+	Number of RRs: 2
+	First Resolution: 184.169.200.40
+	Lookup Time: 268 ms
+	(custom) Number of RRs: 2
+	(custom) First Resolution: 184.169.200.40
+	(custom) Lookup Time: 461 ms
+	(custom) (RD) Number of RRs: 2
+	(custom) (RD) First Resolution: 184.169.200.40
+	(custom) (RD) Lookup Time: 19 ms
+[Packet 85 ]
+2013-02-27 03:35:48.447327	 : UDP 192.168.1.194 → 8.8.8.8 : 46:77:01:0...
+Extracted :	 ('ppsuika.ac.id', 1, 1)
+	Number of RRs: 1
+	First Resolution: 203.175.8.54
+	Lookup Time: 33 ms
+	(custom) Number of RRs: 1
+	(custom) First Resolution: 203.175.8.54
+	(custom) Lookup Time: 1181 ms
+	(custom) (RD) Number of RRs: 1
+	(custom) (RD) First Resolution: 203.175.8.54
+	(custom) (RD) Lookup Time: 21 ms
+[Packet 86 ]
+2013-02-27 03:35:48.775265	 : UDP 192.168.1.195 → 8.8.8.8 : 6f:23:01:0...
+Extracted :	 ('healthnews4you.com', 1, 1)
+	Number of RRs: 2
+	First Resolution: 15.197.148.33
+	Lookup Time: 446 ms
+	(custom) Number of RRs: 2
+	(custom) First Resolution: 3.33.130.190
+	(custom) Lookup Time: 450 ms
+	(custom) (RD) Number of RRs: 2
+	(custom) (RD) First Resolution: 3.33.130.190
+	(custom) (RD) Lookup Time: 20 ms
+[Packet 87 ]
+2013-02-27 03:36:02.881001	 : UDP 192.168.1.196 → 8.8.8.8 : 81:84:01:0...
+Extracted :	 ('stunninggirls.net', 1, 1)
+	Number of RRs: 1
+	First Resolution: 34.95.33.229
+	Lookup Time: 1185 ms
+	(custom) Number of RRs: 1
+	(custom) First Resolution: 34.95.33.229
+	(custom) Lookup Time: 522 ms
+	(custom) (RD) Number of RRs: 1
+	(custom) (RD) First Resolution: 34.95.33.229
+	(custom) (RD) Lookup Time: 23 ms
+[Packet 88 ]
+2013-02-27 03:36:19.401031	 : UDP 192.168.1.197 → 8.8.8.8 : 46:21:01:0...
+Extracted :	 ('kathihill.com', 1, 1)
+	Number of RRs: 1
+	First Resolution: 159.65.187.116
+	Lookup Time: 469 ms
+	(custom) Number of RRs: 1
+	(custom) First Resolution: 159.65.187.116
+	(custom) Lookup Time: 450 ms
+	(custom) (RD) Number of RRs: 1
+	(custom) (RD) First Resolution: 159.65.187.116
+	(custom) (RD) Lookup Time: 19 ms
+[Packet 89 ]
+2013-02-27 03:36:19.739490	 : UDP 192.168.1.198 → 8.8.8.8 : cb:ec:01:0...
+Extracted :	 ('linksplash.info', 1, 1)
+	Number of RRs: 0
+	First Resolution: None
+	Lookup Time: 432 ms
+	(custom) Number of RRs: 0
+	(custom) First Resolution: None
+	(custom) Lookup Time: 7463 ms
+	(custom) (RD) Number of RRs: 0
+	(custom) (RD) First Resolution: None
+	(custom) (RD) Lookup Time: 3033 ms
+[Packet 90 ]
+2013-02-27 03:36:26.766487	 : UDP 192.168.1.199 → 8.8.8.8 : 94:67:01:0...
+Extracted :	 ('group14eng.com', 1, 1)
+	Number of RRs: 1
+	First Resolution: 192.124.249.164
+	Lookup Time: 474 ms
+	(custom) Number of RRs: 1
+	(custom) First Resolution: 192.124.249.164
+	(custom) Lookup Time: 439 ms
+	(custom) (RD) Number of RRs: 1
+	(custom) (RD) First Resolution: 192.124.249.164
+	(custom) (RD) Lookup Time: 20 ms
+[Packet 91 ]
+2013-02-27 03:36:30.282159	 : UDP 192.168.1.200 → 8.8.8.8 : c8:35:01:0...
+Extracted :	 ('shqqaa.com', 1, 1)
+	Number of RRs: 2
+	First Resolution: 172.67.134.61
+	Lookup Time: 437 ms
+	(custom) Number of RRs: 2
+	(custom) First Resolution: 104.21.25.127
+	(custom) Lookup Time: 566 ms
+	(custom) (RD) Number of RRs: 2
+	(custom) (RD) First Resolution: 104.21.25.127
+	(custom) (RD) Lookup Time: 19 ms
+[Packet 92 ]
+2013-02-27 03:36:30.338093	 : UDP 192.168.1.201 → 8.8.8.8 : 2e:24:01:0...
+Extracted :	 ('mesites.co.za', 1, 1)
+	Number of RRs: 1
+	First Resolution: 41.204.200.130
+	Lookup Time: 1503 ms
+	(custom) Number of RRs: 1
+	(custom) First Resolution: 41.204.200.130
+	(custom) Lookup Time: 1799 ms
+	(custom) (RD) Number of RRs: 1
+	(custom) (RD) First Resolution: 41.204.200.130
+	(custom) (RD) Lookup Time: 19 ms
+[Packet 93 ]
+2013-02-27 03:36:33.920725	 : UDP 192.168.1.202 → 8.8.8.8 : a5:1f:01:0...
+Extracted :	 ('progettogiovani.pd.it', 1, 1)
+	Number of RRs: 1
+	First Resolution: 185.213.115.40
+	Lookup Time: 45 ms
+	(custom) Number of RRs: 1
+	(custom) First Resolution: 185.213.115.40
+	(custom) Lookup Time: 644 ms
+	(custom) (RD) Number of RRs: 1
+	(custom) (RD) First Resolution: 185.213.115.40
+	(custom) (RD) Lookup Time: 28 ms
+[Packet 94 ]
+2013-02-27 03:36:37.507438	 : UDP 192.168.1.203 → 8.8.8.8 : 58:a2:01:0...
+Extracted :	 ('uahoy.net', 1, 1)
+	Number of RRs: 0
+	First Resolution: None
+	Lookup Time: 337 ms
+	(custom) Number of RRs: 0
+	(custom) First Resolution: None
+	(custom) Lookup Time: 12241 ms
+	(custom) (RD) Number of RRs: 0
+	(custom) (RD) First Resolution: None
+	(custom) (RD) Lookup Time: 12367 ms
+[Packet 95 ]
+2013-02-27 03:36:37.992873	 : UDP 192.168.1.204 → 8.8.8.8 : c1:9c:01:0...
+Extracted :	 ('retiragroup.com', 1, 1)
+	Number of RRs: 0
+	First Resolution: None
+	Lookup Time: 222 ms
+	(custom) Number of RRs: 0
+	(custom) First Resolution: None
+	(custom) Lookup Time: 11096 ms
+	(custom) (RD) Number of RRs: 0
+	(custom) (RD) First Resolution: None
+	(custom) (RD) Lookup Time: 11320 ms
+[Packet 96 ]
+2013-02-27 03:36:38.207501	 : UDP 192.168.1.205 → 8.8.8.8 : 97:8f:01:0...
+Extracted :	 ('effexdjs.com', 1, 1)
+	Number of RRs: 0
+	First Resolution: None
+	Lookup Time: 300 ms
+	(custom) Number of RRs: 0
+	(custom) First Resolution: None
+	(custom) Lookup Time: 11441 ms
+	(custom) (RD) Number of RRs: 0
+	(custom) (RD) First Resolution: None
+	(custom) (RD) Lookup Time: 11225 ms
+[Packet 97 ]
+2013-02-27 03:36:38.282996	 : UDP 192.168.1.206 → 8.8.8.8 : c1:04:01:0...
+Extracted :	 ('mysearch-online.com', 1, 1)
+	Number of RRs: 0
+	First Resolution: None
+	Lookup Time: 231 ms
+	(custom) Number of RRs: 0
+	(custom) First Resolution: None
+	(custom) Lookup Time: 11164 ms
+	(custom) (RD) Number of RRs: 0
+	(custom) (RD) First Resolution: None
+	(custom) (RD) Lookup Time: 11240 ms
+[Packet 98 ]
+2013-02-27 03:36:38.298536	 : UDP 192.168.1.207 → 8.8.8.8 : 6f:8d:01:0...
+Extracted :	 ('asadventure.com', 1, 1)
+	Number of RRs: 4
+	First Resolution: 143.204.55.107
+	Lookup Time: 85 ms
+	(custom) Number of RRs: 4
+	(custom) First Resolution: 143.204.55.46
+	(custom) Lookup Time: 346 ms
+	(custom) (RD) Number of RRs: 4
+	(custom) (RD) First Resolution: 143.204.55.46
+	(custom) (RD) Lookup Time: 20 ms
+[Packet 99 ]
+2013-02-27 03:36:45.126936	 : UDP 192.168.1.208 → 8.8.8.8 : 31:15:01:0...
+Extracted :	 ('michiganbulb.com', 1, 1)
+	Number of RRs: 1
+	First Resolution: 208.27.142.168
+	Lookup Time: 578 ms
+	(custom) Number of RRs: 1
+	(custom) First Resolution: 208.27.142.168
+	(custom) Lookup Time: 460 ms
+	(custom) (RD) Number of RRs: 1
+	(custom) (RD) First Resolution: 208.27.142.168
+	(custom) (RD) Lookup Time: 19 ms
+[Packet 100 ]
+2013-02-27 03:36:48.327010	 : UDP 192.168.1.209 → 8.8.8.8 : a3:21:01:0...
+Extracted :	 ('shivalikprints.com', 1, 1)
+	Number of RRs: 1
+	First Resolution: 162.215.11.92
+	Lookup Time: 449 ms
+	(custom) Number of RRs: 1
+	(custom) First Resolution: 162.215.11.92
+	(custom) Lookup Time: 344 ms
+	(custom) (RD) Number of RRs: 1
+	(custom) (RD) First Resolution: 162.215.11.92
+	(custom) (RD) Lookup Time: 20 ms
