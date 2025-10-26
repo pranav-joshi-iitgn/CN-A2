@@ -295,4 +295,99 @@ The reason I will not be doing this is because of (as stated before) the relativ
 
 ## Part D
 
-The server is
+The Python scrip `extract.py` does what the question asks to do.
+
+It is to be ran inside the MiniNet CLI after setting up the server (for client `h1` for example) as
+
+```
+h1 python3 extract.py "Pcaps/ PCAP_1_H1.pcap" H1.csv > H1.log 
+```
+
+It does 4 different kinds of resolutions for any query extracted from the PCAP :
+1. Using default resolver (listening at `10.0.0.6`) with help of the function `nslookup.nslookup`.
+2. Using custom resolver (`10.0.0.5`) with RD flag set to 0 in the request and (strictly) no caching.
+3. Using custom resolver with RD=1 in request and (strictly) no caching.
+4. Using custom resolver wih RD=0 in request and caching; with looking up NS records also enabled.
+
+- The data generated from the measurements done by the **server** is first printed in any log file provided (or `stdout`) and then added to the `servers_stats.csv` file.
+- The data generated from the measurements done by the **client** is written into the CSV file proved in arguments.
+
+Finally, after all the clients (`h1`,`h2`,`h3`,`h4`) have parsed their PCAPS and resolved the DNS queries in the respective PCAPs using the 4 methods and writtent the data, 
+the `Analysis.py` script is used to generate statistics and graphs from clients' data.
+Similarly, `Analyse_stats.py` is used to generate statistics from the server's data in `servers_stats.csv`.
+
+All of this is time consuming.
+So, I have create a mininet script named `mininet_script.txt` that is fed into the `CLI` object constructor in `topo.py` when it is ran without arguments.
+
+```
+dns python3 dns.py server 10.0.0.5 server.log --log &
+dns echo "server started" > topo.log
+h1 echo "h1 is client. Output will be in H1.log" >> topo.log
+h1 python3 extract.py "Pcaps/ PCAP_1_H1.pcap" H1.csv > H1.log 2>&1
+h2 echo "h2 is client. Output will be in H2.log" >> topo.log
+h2 python3 extract.py "Pcaps/ PCAP_2_H2.pcap" H2.csv > H2.log 2>&1
+h3 echo "h3 is client. Output will be in H3.log" >> topo.log
+h3 python3 extract.py "Pcaps/ PCAP_3_H3.pcap" H3.csv > H3.log 2>&1
+h4 echo "h4 is client. Output will be in H4.log" >> topo.log
+h4 python3 extract.py "Pcaps/ PCAP_4_H4.pcap" H4.csv > H4.log 2>&1
+dns echo "finished" >> topo.log
+```
+
+Further, the issuing of commands to set up the DNS configuration and clean (`mn -c`) MiniNet is tiresome.
+So, I have written the `run.sh` script that will do the whole end-to-end process of data collectiob and Analysis in one go without human intervention.
+
+Now, as you can see in the code for `mininet_script.txt` , the server is logging to the `server.log` file.
+The logging can be done in 3 levels. For simplicity, I have kept it at level 2 (with 1 being minimal and 3 being detailed).
+
+A small excrept from the file is this :
+
+```log
+[ 2025-10-26 15:59:01.180861 ]  [Query] celerity.com (QTYPE=A) (RD=0) (Cache=0) from ('10.0.0.4', 57595)
+[ 2025-10-26 15:59:01.180904 ]  [ROOT] celerity.com @ 198.41.0.4 to be answered in 10 s
+[ 2025-10-26 15:59:01.180918 ]  <3> Asking server for direct hits
+[ 2025-10-26 15:59:01.441509 ]  * Response arrived from 198.41.0.4 in 260.54 ms
+[ 2025-10-26 15:59:01.441993 ]  * Got 0 Answer RRs
+[ 2025-10-26 15:59:01.442015 ]  * Got 13 Authority RRs
+[ 2025-10-26 15:59:01.442023 ]  * Got 11 Additional RRs
+[ 2025-10-26 15:59:01.442030 ]  <3> Checking Additional RRs for delegated servers
+[ 2025-10-26 15:59:01.442060 ] 	 [com TLD] celerity.com @ 192.41.162.30 to be answered in 9.738861799240112 s
+[ 2025-10-26 15:59:01.442075 ] 	 <3> Asking server for direct hits
+[ 2025-10-26 15:59:01.646417 ] 	 * Response arrived from 192.41.162.30 in 204.29 ms
+[ 2025-10-26 15:59:01.646725 ] 	 * Got 0 Answer RRs
+[ 2025-10-26 15:59:01.646745 ] 	 * Got 5 Authority RRs
+[ 2025-10-26 15:59:01.646756 ] 	 * Got 10 Additional RRs
+[ 2025-10-26 15:59:01.646763 ] 	 <3> Checking Additional RRs for delegated servers
+[ 2025-10-26 15:59:01.646793 ] 		 [celerity.com AUTH] celerity.com @ 208.80.124.2 to be answered in 9.534148931503296 s
+[ 2025-10-26 15:59:01.646809 ] 		 <3> Asking server for direct hits
+[ 2025-10-26 15:59:01.751615 ] 		 * Response arrived from 208.80.124.2 in 104.74 ms
+[ 2025-10-26 15:59:01.751752 ] 		 * Got 1 Answer RRs
+[ 2025-10-26 15:59:01.751769 ] 		 [STAT] execution finished in : 104.96 ms
+[ 2025-10-26 15:59:01.751793 ] 	 [STAT] execution finished in : 309.72 ms
+[ 2025-10-26 15:59:01.751827 ]  [STAT] execution finished in : 570.91 ms
+[ 2025-10-26 15:59:01.751888 ]  [STAT] servers contacted : 3
+[ 2025-10-26 15:59:01.751895 ]  [STAT] average server communication time : 189.85 ms
+[ 2025-10-26 15:59:01.751903 ]  [STAT] total server communication time : 569.56 ms
+[ 2025-10-26 15:59:01.751911 ]  [STAT] total time :  570.97 ms
+[ 2025-10-26 15:59:01.752057 ]  [Response] Sent 1 answers to ('10.0.0.4', 57595)
+```
+
+Here, `[ROOT]` , `[CACHE]`, `[com TLD]` , etc. are used to give us the recursion depth/zone which we are at as well as the IP addresses and the url that we are currently querying.
+For example, `[ROOT] celerity.com @ 198.41.0.4 to be answered in 10 s` tells us the we are querying `celerity.com` at the root server `198.41.0.4` and have set a timeout of 10s.
+The level 2 specific logs such as `<3> Checking Additional RRs for delegated servers` tell us what stage of the (linear) procedure for a particular depth we are at.
+The bullet points, such as `* Response arrived from 208.80.124.2 in 104.74 ms` and `* Got 1 Answer RRs` tell us the communication that happened between our custom resolver and some other name-server. 
+The `[STAT]` lines tell us values of statistics for a given query, such as
+        - average RTT for communication between custom resolver and other servers
+        - total time elapsed
+        - number of queries sent to other name-servers
+        - time to finish a particular datagram exchange
+        - number of cache hits for this resolution
+        - number of cache misses for this resolution
+        - average cache hit rate till now
+The same values (only a minimal set) are written to `servers_statistics.csv`. The schema for that is :
+
+```csv
+name, type, RD, Cache, sum_RTT, queries, total_time, cache_hits, cache_misses, num_answers
+```
+
+And finaly, `[Query]` and `[Response]` tell us information about the communication that happened between the client and the server. 
+Especially `[Query]` tells us the type of resolution we need to do. For example, here it is `[Query] celerity.com (QTYPE=A) (RD=0) (Cache=0) from ('10.0.0.4', 57595)`
