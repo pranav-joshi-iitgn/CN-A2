@@ -44,7 +44,7 @@ QCLASS_MAP_INV = {x:y for y,x in QCLASS_MAP.items()}
 
 DNS_CACHE:dict[tuple,list] = {} # Exact match
 NS_CACHE:dict[str,list] = {} # longest suffix match
-CACHING = True
+CACHING = False
 
 class ResourceRecord:
     def __init__(self,Name,Type,Class,TTL,RDlen,Value,logger=None):
@@ -311,10 +311,10 @@ def send_dns_query(packet, server_ip=ROOT_SERVER, port=53, timeout=5,
         if timeout is not None : sock.settimeout(timeout)
         sock.sendto(packet, (server_ip, port))
         QUERIES_SENT += 1
-        log.print('sent packet to',server_ip,'with timeout of',timeout,'s for response',3)
+        log.print('sent packet to',server_ip,'with timeout of',timeout,'s for response',level=3)
         response, _ = sock.recvfrom(512)  # DNS typically max UDP size 512 bytes
         # if Log: print('recieved packet from',server_ip,file=LogFile,flush=True)
-        log.print('recieved packet from',server_ip,3)
+        log.print('recieved packet from',server_ip,level=3)
         ANSWERS_RECIEVED += 1
     if measure_time: return response, float(time()-t0)
     return response
@@ -329,35 +329,45 @@ def ask(name,server=ROOT_SERVER,qtype=1,qclass=1,
     QUERIES_SENT = 0
     ANSWERS_RECIEVED = 0
     if depth > MAX_DEPTH : raise RecursionError("Too much recursion")
-    log = Logger(Log,LogFile,depth,True)
-    t0 = time()
+    log = Logger(Log,LogFile,depth,True,2)
+    parts_len = len(zone.split('.'))
+    if not zone : server_type = '[ROOT]'
+    elif parts_len == 1 : server_type = f'[{zone} TLD]'
+    elif parts_len > 1 : server_type = f'[{zone} AUTH]'
+    log.print(server_type,name,'@',server,'to be answered in',app_timeout,'s')
     if get_stats : 
         stats = {}
         stats['sum_RTT'] = 0
         stats['queries'] = 0
         stats['cache_hits'] = 0
         stats['cache_misses'] = 0
+    t0 = time()
     def check_time(stage=0):
         elapsed_time = float(time()-t0)
         if elapsed_time > app_timeout: raise TimeoutError(f"Timeout error at stage {stage}")
     def get_remaining_time():
         remaining_time = app_timeout-float(time()-t0)
         return remaining_time
+
     if CACHING : 
+        log.print('<0> Checking cache for direct hits',level=2)
         cached_records = check_cache(name,qtype,qclass)
         if cached_records : 
-            log.print('[CACHE] HIT : Found',len(cached_records),'RRs')
+            log.print(f'[CACHE] HIT({name},{qtype},{qclass}) : Found',len(cached_records),'RRs')
             if get_stats:
                 stats['cache_hits'] += 1
                 return cached_records,stats
             return cached_records
+    check_time(0)
+
     if CACHING and name != zone:
+        log.print('<1> Checking cache for NS records',level=2)
         ns_cached_records = check_ns_cache(name,zone)
         if ns_cached_records:
             new_zone,RRs = ns_cached_records
             log.print('[CACHE] HIT : Found',len(RRs),'servers for zone',new_zone)
             if get_stats:stats['cache_hits'] += 1
-            for RR in choices(RRs,k=3): # Only check for 3
+            for RR in choices(RRs,k=5): # Only check for 5
                 new_server = RR.Value
                 log.print('Trying',RR.Name,'(',new_server,')',level=3)
                 try:
@@ -365,7 +375,7 @@ def ask(name,server=ROOT_SERVER,qtype=1,qclass=1,
                     if get_stats:
                         answerRRs,new_stats = answerRRs
                         update_stats(new_stats)
-                    if not answerRRs:log.print(RR.Name,'did not return any answers',level=2)
+                    if not answerRRs:log.print(RR.Name,'did not return any answers',level=3)
                     else: 
                         if get_stats: return answerRRs,stats
                         return answerRRs
@@ -377,22 +387,22 @@ def ask(name,server=ROOT_SERVER,qtype=1,qclass=1,
             log.print(f'[CACHE] MISS : {len(DNS_CACHE)} keys in cache and {len(NS_CACHE)} zones')
             if get_stats:stats['cache_misses'] += 1
     check_time(1)
-    parts_len = len(zone.split('.'))
-    if parts_len == 0 : log.print('[ROOT]',end='')
-    elif parts_len == 1 : log.print(f'[{zone} TLD]',end='')
-    elif parts_len == 1 : log.print(f'[{zone} AUTH]',end='')
-    log.print(name,'@',server,'to be answered in',remaining_time(),'s')
+
+    log.print('<3> Asking server for direct hits',level=2)
     pack = create_dns_query(name,qtype,qclass,RD)
     response = send_dns_query(pack,server,timeout=timeout,logger=log,measure_time=get_stats)
     if get_stats: 
         response, d = response
+        log.print('* Response arrived from',server,'in',round(d*1000,2),'ms',level=2)
         stats['sum_RTT'] += d
         stats['queries'] += 1
     response = parse_dns_message(response)
     answerRRs = response['Answers']
-    log.print("extracted",len(answerRRs),'Answer RRs',level=3)
+    log.print("* Got",len(answerRRs),'Answer RRs',level=2)
     if answerRRs: 
-        if get_stats: return answerRRs,stats
+        if get_stats: 
+            log.print('[STAT] execution finished in :',round(1000*float(time()-t0),2),'ms')
+            return answerRRs,stats
         return answerRRs 
     check_time(2)
 
@@ -400,26 +410,24 @@ def ask(name,server=ROOT_SERVER,qtype=1,qclass=1,
     # Otherwise, do NS stuff
     authorityRRs = response['Authority']
     additionalRRs = response['Additional']
-    log.print('extracted',len(authorityRRs),'Authority RRs',level=3)
-    log.print('extracted',len(additionalRRs),'Additional RRs',level=3)
+    log.print('* Got',len(authorityRRs),'Authority RRs',level=2)
+    log.print('* Got',len(additionalRRs),'Additional RRs',level=2)
 
-    log.print("Checking Additional RRs for delegated servers",level=2)
-    # pack = create_dns_query(name,2,1)
-    # response = send_dns_query(pack,server,timeout=timeout,logger=log)
-    # check_time(3)
-    # response = parse_dns_message(response)
-
+    log.print("<3> Checking Additional RRs for delegated servers",level=2)
     def update_stats(new_stats):
-        for x,y in new_stats: stats[x] += y
+        for x,y in new_stats.items(): 
+            stats[x] += y
 
     NS_RRs = [RR for RR in authorityRRs if RR.Type=='NS' and len(RR.Name) > len(zone)]
     A_RRs = [RR for RR in additionalRRs if RR.Type=='A' or RR.Type=='AAAA']
+    A_RR_IPs = [RR.Value for RR in A_RRs]
     for i,RR2 in enumerate(A_RRs):
         log.print(f'({i+1}) trying',RR2.Name,'(',RR2.Value,')',level=3)
         for j,RR in enumerate(NS_RRs):
             if RR.Value == RR2.Name: # found
                 new_server = RR2.Value
                 new_zone = RR.Name
+                if zone.endswith(new_zone):continue
                 try:
                     answerRRs =  ask(name,new_server,qtype,qclass,Log,RD,timeout,get_remaining_time(),LogFile,depth+1,new_zone,get_stats=get_stats)
                     if get_stats:
@@ -428,17 +436,20 @@ def ask(name,server=ROOT_SERVER,qtype=1,qclass=1,
                     if not answerRRs:
                         log.print(RR2.Name,'did not return any answers',level=3)
                         break
-                    else: 
-                        if get_stats : return answerRRs,stats
+                    else:
+                        if get_stats :
+                            log.print('[STAT] execution finished in :',round(1000*float(time()-t0),2),'ms')
+                            return answerRRs,stats
                         return answerRRs
                 except:
                     log.print('asking',RR2.Name,'crashed',level=3)
                     break
         else:log.print('\t',RR2.Name,'not matched with any NS Authority RR',level=3)
         check_time(3)
-    log.print("Trying to resolve values in Authority RRs to get IP address delegated server",level=2)
+    log.print("<4> Trying to resolve values in Authority RRs to get IP address of delegated server",level=2)
     for i,RR in enumerate(NS_RRs[:5]):
         new_zone = RR.Name
+        if zone.endswith(new_zone):continue
         log.print(f'({i+1}) getting',RR.Value,level=3)
         try:
             res = ask(RR.Value,ROOT_SERVER,1,1,Log,RD,timeout,get_remaining_time(),LogFile,depth+1,get_stats=get_stats)
@@ -447,51 +458,83 @@ def ask(name,server=ROOT_SERVER,qtype=1,qclass=1,
                 update_stats(new_stats)
         except:
             log.print('getting',RR.Value,'crashed',level=3)
-            check_cache(5)
+            check_time(4)
             continue
-        check_time(5)
+        check_time(4)
         for j,new_server in enumerate(res[:5]):
-            log.print(f'({i+1}:{j+1}) trying',new_server.Value)
+            if new_server.Value in A_RR_IPs:continue
+            log.print(f'({i+1}:{j+1}) trying',new_server.Value,level=3)
             try:
                 res2 = ask(name,new_server.Value,qtype,qclass,Log,RD,timeout,get_remaining_time(),LogFile,depth+1,new_zone,get_stats=get_stats)
                 if get_stats:
                     res2,new_stats = res2
                     update_stats(new_stats)
                 if res2 : 
-                    if get_stats: return res2, stats
+                    if get_stats: 
+                        log.print('[STAT] execution finished in :',round(1000*float(time()-t0),2),'ms')
+                        return res2, stats
                     return res2
                 else:log.print(new_server.Value,"didn't return anything",level=3)
             except:log.print('asking',new_server.Value,'failed',level=3)
-            check_time(5)
+            check_time(4)
         log.print(RR.Value,"didn't work",level=3)
-    if get_stats: return [],stats
+    if get_stats: 
+        log.print('[STAT] gave up in :',round(1000*float(time()-t0),2),'ms')
+        return [],stats
     return []
 
+TOTAL_CACHE_HITS = 0
+TOTAL_CACHE_MISSES = 0
+
+
 def server(ip,Log=False,LogFile=None):
-    global QUERIES_SENT,ANSWERS_RECIEVED
+    global QUERIES_SENT,ANSWERS_RECIEVED,CACHING,TOTAL_CACHE_HITS,TOTAL_CACHE_MISSES
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     sock.bind((ip, 53))
     log = Logger(True,LogFile,0,True)
     log.print(f"[*] DNS server listening on {ip}:53")
     QUERIES_SENT = 0
     ANSWERS_RECIEVED = 0
+    f = open('servers_stats.csv','w')
+    def AddStatRow(*args):print(*args,sep=',',file=f,flush=True)
+    AddStatRow('name','type','RD','Cache','sum_RTT','queries','total_time','cache_hits','cache_misses')
     while True:
         try:
             data, addr = sock.recvfrom(512)
-            log.print('recieved from',addr)
+            log.print('* recieved from',addr,level=3)
             parsed = parse_dns_message(data)
             question = parsed['Questions'][0]
             qname = question['QName']
             qtype = question['QType']
-            RD = question['RD']
-            Cache = question['Z']
+            RD = parsed['RD']
+            Cache = parsed['Z']
             log.print(f"[Query] {qname} (QTYPE={QTYPE_MAP[qtype]}) (RD={RD}) (Cache={Cache}) from {addr}")
             CACHING = bool(Cache) 
+            t0 = time()
             answers,stats = ask(qname,ROOT_SERVER,qtype,1,Log,RD,LogFile=LogFile,get_stats=True)
+            t1 = time()
+            total_time = float(t1-t0)
             CACHING = True
             for x,y in stats.items(): log.print(x,':',y)
-            # log.print('Queries Sent :',QUERIES_SENT)
-            # log.print('Answers Recieved :',ANSWERS_RECIEVED)
+            sum_RTT = stats['sum_RTT']
+            queries = stats['queries']
+            log.print('[STAT] servers contacted :',queries)
+            log.print('[STAT] average server communication time :',round(1000*sum_RTT/queries,2),'ms')
+            if Cache:
+                cache_hits = stats['cache_hits']
+                cache_misses = stats['cache_misses']
+                log.print("[STAT] Cache hits :",cache_hits)
+                log.print("[STAT] Cache misses :",cache_misses)
+                TOTAL_CACHE_HITS += cache_hits
+                TOTAL_CACHE_MISSES += cache_misses
+                TOT = TOTAL_CACHE_HITS + TOTAL_CACHE_MISSES
+                if TOT == 0 : hit_rate = 'NA'
+                else: hit_rate = str(round(TOTAL_CACHE_HITS/TOT,2))+'%'
+                log.print('[STAT] Updated hit rate :',hit_rate)
+            else:
+                cache_hits = ''
+                cache_misses = ''
+            AddStatRow(qname,qtype,RD,Cache,sum_RTT,queries,total_time,cache_hits,cache_misses)
             if not answers:
                 log.print("[!] No answers for",qname)
                 response = (
@@ -566,9 +609,7 @@ def client(name,server_ip,qtype=1,qclass=1,RD=False,Cache=False):
         print(e)
         return []
     response = parse_dns_message(response)
-    # flags = response['Flags']
     answers = response["Answers"]
-    # if flags != "1000000110000000":print(f'{name}@{server_ip} response flags:',flags)
     return answers
 
 def custom_lookup(name,server_ip,qtype=1,qclass=1,RD=False,Cache=False):
@@ -584,6 +625,7 @@ def custom_lookup(name,server_ip,qtype=1,qclass=1,RD=False,Cache=False):
 if __name__ == "__main__":
     Log = ("--log" in sys.argv)
     RD = ('--rd' in sys.argv)
+    Cache = ('--c' in sys.argv)
     qtype = 1
     if "-a" in sys.argv:qtype = 1
     elif "-ns" in sys.argv:qtype = 2
@@ -591,6 +633,7 @@ if __name__ == "__main__":
     args = [x for x in sys.argv if not x.startswith('-')]
     if args[1] == "ask":
         name = args[2]
+        CACHING = Cache
         answers =  ask(name,ROOT_SERVER,qtype,1,Log,RD,get_stats=True)
         for a in answers:print(a)
         if len(answers)==0: print('no answers')
@@ -604,7 +647,7 @@ if __name__ == "__main__":
     elif args[1] == "client":
         name = args[2]
         server_ip = args[3]
-        answers = client(name,server_ip,qtype,1,RD)
+        answers = client(name,server_ip,qtype,1,RD,Cache)
         print('Answers:')
         for a in answers:print('\t',a)
         

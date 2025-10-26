@@ -48,7 +48,6 @@ def process_pkt(pkt) -> list:
         l -= 1
     return [(q,query_type,query_class) for q in queries]
 
-only_iter = ('--only_iter' in sys.argv)
 args = [x for x in sys.argv if not x.startswith('-')]
 
 # file = "Pcaps/ PCAP_1_H1.pcap"
@@ -66,25 +65,37 @@ for i,pkt in enumerate(cap):
         for q in new_queries: 
             print("Extracted :\t",q)
             name,qtype,qclass = q
+            row = (name,qtype,qclass)
             a,n,d = nslookup(name,qtype,qclass,nslookup_error_file)
+            row += (a,n,d)
+            print('[Default]')
             print("\tNumber of RRs:",n)
             print("\tFirst Resolution:",a)
             print("\tLookup Time:",d,'ms')
             # 100 queries in 1 minute is slightly more than 1 query in 0.5s
             sleep(0.5)
             a_c,n_c,d_c = custom_lookup(name,'10.0.0.5',qtype,qclass)
-            print("\t(custom) Number of RRs:",n_c)
-            print("\t(custom) First Resolution:",a_c)
-            print("\t(custom) Lookup Time:",d_c,'ms')
+            row += (a_c,n_c,d_c)
+            print('[Custom]')
+            print("\tNumber of RRs:",n_c)
+            print("\tFirst Resolution:",a_c)
+            print("\tLookup Time:",d_c,'ms')
             sleep(1) # there are actually multiple queries done in one iterative resolution
-            if not only_iter:
-                a_r,n_r,d_r = custom_lookup(name,'10.0.0.5',qtype,qclass,RD=True)
-                print("\t(custom) (RD) Number of RRs:",n_r)
-                print("\t(custom) (RD) First Resolution:",a_r)
-                print("\t(custom) (RD) Lookup Time:",d_r,'ms')
-                resolutions.append(q+(a,n,d,a_c,n_c,d_c,a_r,n_r,d_r))
-            else: resolutions.append(q+(a,n,d,a_c,n_c,d_c))
+            a_r,n_r,d_r = custom_lookup(name,'10.0.0.5',qtype,qclass,RD=True)
+            row += (a_r,n_r,d_r)
+            print('[Custom][RD]')
+            print("\tNumber of RRs:",n_r)
+            print("\tFirst Resolution:",a_r)
+            print("\tLookup Time:",d_r,'ms')
             sleep(0.5)
+            a_c,n_c,d_c = custom_lookup(name,'10.0.0.5',qtype,qclass,Cache=True)
+            row += (a_c,n_c,d_c)
+            print('[Custom][Cache]')
+            print("\tNumber of RRs:",n_c)
+            print("\tFirst Resolution:",a_c)
+            print("\tLookup Time:",d_c,'ms')
+            sleep(1) # there are actually multiple queries done in one iterative resolution
+            resolutions.append(row)
     except AttributeError:
         print("packet doesn't have IP addresses or ports.")
         continue
@@ -94,8 +105,9 @@ resolutions = pd.DataFrame(
     columns=(
         ["query",'type','class',
         'first_ans_default','num_ans_RR_default','lookup_time_default',
-        'first_ans_custom','num_ans_RR_custom','lookup_time_custom'
-        ] + ([] if only_iter else ['first_ans_custom_RD','num_ans_RR_custom_RD','lookup_time_custom_RD'])
+        'first_ans_custom','num_ans_RR_custom','lookup_time_custom',
+        'first_ans_custom_RD','num_ans_RR_custom_RD','lookup_time_custom_RD',
+        'first_ans_custom_Cache','num_ans_custom_Cache','lookup_time_custom_Cache']
         )
 )
 resolutions.to_csv(csvfile,index=False)

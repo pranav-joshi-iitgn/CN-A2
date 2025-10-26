@@ -3,11 +3,11 @@ Address:	10.0.0.6#53
 
 Non-authoritative answer:
 Name:	gustissimo.it
-Address: 178.255.74.133
+Address: 178.255.74.135
 Name:	gustissimo.it
 Address: 178.255.74.104
 Name:	gustissimo.it
-Address: 178.255.74.135
+Address: 178.255.74.133
 
 
 
@@ -83,20 +83,19 @@ Address:	10.0.0.6#53
 
 Non-authoritative answer:
 Name:	vinayaprabha.com
-Address: 185.230.63.171
+Address: 185.230.63.186
 Name:	vinayaprabha.com
 Address: 185.230.63.107
 Name:	vinayaprabha.com
-Address: 185.230.63.186
+Address: 185.230.63.171
 
 
 
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-Non-authoritative answer:
-Name:	sitiweb.us
-Address: 136.243.45.246
+;; Got SERVFAIL reply from 10.0.0.6, trying next server
+;; communications error to 127.0.0.53#53: connection refused
+;; communications error to 127.0.0.53#53: connection refused
+;; communications error to 127.0.0.53#53: connection refused
+;; no servers could be reached
 
 
 
@@ -122,9 +121,9 @@ Address:	10.0.0.6#53
 
 Non-authoritative answer:
 Name:	breezelaw.com
-Address: 13.248.169.48
-Name:	breezelaw.com
 Address: 76.223.54.146
+Name:	breezelaw.com
+Address: 13.248.169.48
 
 
 
@@ -142,15 +141,15 @@ Address:	10.0.0.6#53
 
 Non-authoritative answer:
 Name:	22hotmail.com
-Address: 20.236.44.162
-Name:	22hotmail.com
-Address: 20.231.239.246
-Name:	22hotmail.com
-Address: 20.76.201.171
+Address: 20.70.246.20
 Name:	22hotmail.com
 Address: 20.112.250.133
 Name:	22hotmail.com
-Address: 20.70.246.20
+Address: 20.76.201.171
+Name:	22hotmail.com
+Address: 20.236.44.162
+Name:	22hotmail.com
+Address: 20.231.239.246
 
 
 
@@ -195,17 +194,18 @@ Address:	10.0.0.6#53
 
 Non-authoritative answer:
 Name:	thepropertyvault.co.uk
-Address: 13.248.213.45
-Name:	thepropertyvault.co.uk
 Address: 76.223.67.189
+Name:	thepropertyvault.co.uk
+Address: 13.248.213.45
 
 
 
-;; Got SERVFAIL reply from 10.0.0.6, trying next server
-;; communications error to 127.0.0.53#53: connection refused
-;; communications error to 127.0.0.53#53: connection refused
-;; communications error to 127.0.0.53#53: connection refused
-;; no servers could be reached
+Server:		10.0.0.6
+Address:	10.0.0.6#53
+
+Non-authoritative answer:
+Name:	viahttps.com
+Address: 64.251.0.59
 
 
 
@@ -222,9 +222,9 @@ Address:	10.0.0.6#53
 
 Non-authoritative answer:
 Name:	majorleaguelacrosse.com
-Address: 172.67.170.123
-Name:	majorleaguelacrosse.com
 Address: 104.21.87.175
+Name:	majorleaguelacrosse.com
+Address: 172.67.170.123
 
 
 
@@ -248,11 +248,12 @@ Address: 194.59.214.75
 
 
 
-;; Got SERVFAIL reply from 10.0.0.6, trying next server
-;; communications error to 127.0.0.53#53: connection refused
-;; communications error to 127.0.0.53#53: connection refused
-;; communications error to 127.0.0.53#53: connection refused
-;; no servers could be reached
+Server:		10.0.0.6
+Address:	10.0.0.6#53
+
+Non-authoritative answer:
+Name:	arrabonet.hu
+Address: 213.163.44.68
 
 
 
@@ -369,12 +370,11 @@ Non-authoritative answer:
 
 
 
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-Non-authoritative answer:
-Name:	koopsmodellbau.de
-Address: 217.160.0.247
+;; Got SERVFAIL reply from 10.0.0.6, trying next server
+;; communications error to 127.0.0.53#53: connection refused
+;; communications error to 127.0.0.53#53: connection refused
+;; communications error to 127.0.0.53#53: connection refused
+;; no servers could be reached
 
 
 
@@ -396,11 +396,12 @@ Address: 13.107.246.36
 
 
 
-;; Got SERVFAIL reply from 10.0.0.6, trying next server
-;; communications error to 127.0.0.53#53: connection refused
-;; communications error to 127.0.0.53#53: connection refused
-;; communications error to 127.0.0.53#53: connection refused
-;; no servers could be reached
+Server:		10.0.0.6
+Address:	10.0.0.6#53
+
+Non-authoritative answer:
+Name:	pilsnerurquell.com
+Address: 93.185.98.138
 
 
 
@@ -442,11 +443,20 @@ Address: 92.204.239.74
 
 
 
-;; Got SERVFAIL reply from 10.0.0.6, trying next server
-;; communications error to 127.0.0.53#53: connection refused
-;; communications error to 127.0.0.53#53: connection refused
-;; communications error to 127.0.0.53#53: connection refused
-;; no servers could be reached
+Server:		10.0.0.6
+Address:	10.0.0.6#53
+
+Non-authoritative answer:
+Name:	hackthissite.org
+Address: 137.74.187.102
+Name:	hackthissite.org
+Address: 137.74.187.100
+Name:	hackthissite.org
+Address: 137.74.187.101
+Name:	hackthissite.org
+Address: 137.74.187.104
+Name:	hackthissite.org
+Address: 137.74.187.103
 
 
 
@@ -476,11 +486,12 @@ Non-authoritative answer:
 
 
 
-;; Got SERVFAIL reply from 10.0.0.6, trying next server
-;; communications error to 127.0.0.53#53: connection refused
-;; communications error to 127.0.0.53#53: connection refused
-;; communications error to 127.0.0.53#53: connection refused
-;; no servers could be reached
+Server:		10.0.0.6
+Address:	10.0.0.6#53
+
+Non-authoritative answer:
+Name:	capequilog.com
+Address: 208.94.116.26
 
 
 
@@ -509,9 +520,9 @@ Address:	10.0.0.6#53
 
 Non-authoritative answer:
 Name:	magic-illusion.ru
-Address: 104.21.4.130
-Name:	magic-illusion.ru
 Address: 172.67.132.25
+Name:	magic-illusion.ru
+Address: 104.21.4.130
 
 
 
@@ -676,14 +687,11 @@ Address: 192.124.249.58
 
 
 
-Server:		10.0.0.6
-Address:	10.0.0.6#53
-
-Non-authoritative answer:
-Name:	closerdiets.com
-Address: 5.22.145.16
-Name:	closerdiets.com
-Address: 5.22.145.121
+;; Got SERVFAIL reply from 10.0.0.6, trying next server
+;; communications error to 127.0.0.53#53: connection refused
+;; communications error to 127.0.0.53#53: connection refused
+;; communications error to 127.0.0.53#53: connection refused
+;; no servers could be reached
 
 
 
@@ -720,9 +728,9 @@ Address:	10.0.0.6#53
 
 Non-authoritative answer:
 Name:	originalmagicart.com
-Address: 15.197.225.128
-Name:	originalmagicart.com
 Address: 3.33.251.168
+Name:	originalmagicart.com
+Address: 15.197.225.128
 
 
 
