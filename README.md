@@ -246,4 +246,53 @@ This is done using the `dns.py` library that can be used in three modes :
 - `client` : The client can send DNS request with different values of `RD` and a custom `Cache` flag (last bit in flags) that tells the server whether or not to do Caching.
 There is also a `custom_lookup` function that behaves similar to the function in the `nslookup.py` module.
 
+Example :
 
+```
+mininet> dns python3 dns.py server 10.0.0.5 &
+mininet> h1 python3 dns.py client google.com 10.0.0.5
+Answers:
+         (google.com,A,IN,142.250.192.46)
+```
+
+Also, just as I said earlier, we _can_ enable `nslookup` with `10.0.0.5` as our custom server, like this:
+
+```
+*** Starting CLI:
+mininet> dns python3 dns.py server 10.0.0.5 &
+mininet> h1 sh config_custom.sh
+'nameserver 10.0.0.5' already exists in /etc/resolv.conf. No changes made.
+mininet> h1 nslookup google.com
+Server:         10.0.0.5
+Address:        10.0.0.5#53
+
+Non-authoritative answer:
+Name:   google.com
+Address: 142.250.192.46
+Name:   google.com
+Address: 2404:6800:4009:828::200e
+```
+
+To go back, we do this :
+
+```
+mininet> h1 sh unconfig_custom.sh
+Removing 'nameserver 10.0.0.5' from /etc/resolv.conf
+mininet> h1 nslookup google.com
+Server:         10.0.0.6
+Address:        10.0.0.6#53
+
+Non-authoritative answer:
+Name:   google.com
+Address: 142.250.192.46
+Name:   google.com
+Address: 2404:6800:4009:828::200e
+```
+
+Notice that on adding `nameserver 10.0.0.5` at the top of `/etc/resolv.conf`, the mininet host `h1` sends its DNS query to `10.0.0.5` first, rather than `10.0.0.6`, which it reverts back to after we remove the `nameserver 10.0.0.5` line using `unconfig_custom.sh` . 
+
+The reason I will not be doing this is because of (as stated before) the relative simplicity of the socket programming approach.
+
+## Part D
+
+The server is
