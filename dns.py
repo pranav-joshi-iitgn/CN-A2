@@ -4,48 +4,50 @@ from datetime import datetime
 from random import choices
 ROOT_SERVER = '198.41.0.4'
 
-QTYPE_MAP = {
-    1: "A",
-    2: "NS",
-    3: "MD",
-    4: "MF",
-    5: "CNAME",
-    6: "SOA",
-    7: "MB",
-    8: "MG",
-    9: "MR",
-    10: "NULL",
-    11: "WKS",
-    12: "PTR",
-    13: "HINFO",
-    14: "MINFO",
-    15: "MX",
-    16: "TXT",
-    28: "AAAA",
-    33: "SRV",
-    41: "OPT",
-    252: "AXFR",
-    253: "MAILB",
-    254: "MAILA",
-    255: "ANY"
-}
+# QTYPE_MAP = {
+#     1: "A",
+#     2: "NS",
+#     3: "MD",
+#     4: "MF",
+#     5: "CNAME",
+#     6: "SOA",
+#     7: "MB",
+#     8: "MG",
+#     9: "MR",
+#     10: "NULL",
+#     11: "WKS",
+#     12: "PTR",
+#     13: "HINFO",
+#     14: "MINFO",
+#     15: "MX",
+#     16: "TXT",
+#     28: "AAAA",
+#     33: "SRV",
+#     41: "OPT",
+#     252: "AXFR",
+#     253: "MAILB",
+#     254: "MAILA",
+#     255: "ANY"
+# }
 
-QTYPE_MAP_INV = {x:y for y,x in QTYPE_MAP.items()}
+# QTYPE_MAP_INV = {x:y for y,x in QTYPE_MAP.items()}
 
-QCLASS_MAP = {
-    1: "IN",    # Internet
-    2: "CS",    # CSNET (obsolete)
-    3: "CH",    # CHAOS
-    4: "HS",    # Hesiod
-    255: "ANY"
-}
+# QCLASS_MAP = {
+#     1: "IN",    # Internet
+#     2: "CS",    # CSNET (obsolete)
+#     3: "CH",    # CHAOS
+#     4: "HS",    # Hesiod
+#     255: "ANY"
+# }
 
-QCLASS_MAP_INV = {x:y for y,x in QCLASS_MAP.items()}
+# QCLASS_MAP_INV = {x:y for y,x in QCLASS_MAP.items()}
+
+from maps import QTYPE_MAP,QTYPE_MAP_INV,QCLASS_MAP,QCLASS_MAP_INV
 
 DNS_CACHE:dict[tuple,list] = {} # Exact match
 NS_CACHE:dict[str,list] = {} # longest suffix match
 CACHING = False
-
+NS_CACHING = True
 class ResourceRecord:
     def __init__(self,Name,Type,Class,TTL,RDlen,Value,logger=None):
         global CACHING,DNS_CACHE,NS_CACHE
@@ -61,26 +63,32 @@ class ResourceRecord:
             # if logger :
             #     logger.print("trying to push RR of type",self.Type,'into cache')
             if (Name,Type,Class) not in DNS_CACHE : 
-                DNS_CACHE[(Name,Type,Class)] = [self]
+                DNS_CACHE[(Name,Type,Class)] = S = set()
             else:
-                L = DNS_CACHE[(Name,Type,Class)]
-                for RR in L :
-                    if RR.Value == Value: 
-                        RR.TTL = TTL
-                        break
-                else:L.append(self)
+                S = DNS_CACHE[(Name,Type,Class)]
+            S.add(self)
+                # for RR in L :
+                #     if RR.Value == Value: 
+                #         RR.TTL = TTL
+                #         break
+                # else:L.append(self)
 
             # NS_CACHE
-            if Type == 'NS':
-                if Name not in NS_CACHE:
-                    NS_CACHE[Name] = [self]
-                else:
-                    L = NS_CACHE[Name]
-                    for RR in L : 
-                        if RR.Value == Value:
-                            RR.TTL = TTL
-                            break
-                    else:L.append(self)
+            if Type == 'NS' and NS_CACHING:
+                if Name not in NS_CACHE:NS_CACHE[Name] = S = set()
+                else:S = NS_CACHE[Name]
+                S.add(self)
+                    # for RR in L : 
+                    #     if RR.Value == Value:
+                    #         RR.TTL = TTL
+                    #         break
+                    # else:L.append(self)
+
+    def __eq__(self,other):
+        return (self.Name==other.Name) and (self.Class==other.Class) and (self.Type==other.Type) and (self.Value==other.Value)
+
+    def __hash__(self):
+        return hash((self.Name,self.Type,self.Class,self.Value))
 
     def __repr__(self):
         return f"({self.Name},{self.Type},{self.Class},{self.Value})"
@@ -91,23 +99,40 @@ def check_cache(Name,Type,Class):
     if isinstance(Class,int):Class = QCLASS_MAP[Class]
     key = (Name,Type,Class)
     if key not in DNS_CACHE : return []
-    return DNS_CACHE[key]
+    return list(DNS_CACHE[key])
+
+# def check_ns_cache(Name,curr_zone=''):
+#     global NS_CACHE
+#     l = len(curr_zone)
+#     if Name in NS_CACHE : zones = [Name] # exact match
+#     else: 
+#         zones = [x for x in NS_CACHE.keys() if (len(x) > l and Name.endswith('.'+x))]
+#         if not zones : return None
+#         zones = sorted(zones,key=lambda x:len(x),reverse=True)
+#     for zone in zones:
+#         servers = []
+#         for RR in NS_CACHE[zone]: # NS record
+#             servers.extend(check_cache(
+#                 RR.Value, # The hostname of delegated server
+#                 'A','IN'))
+#         if servers:return zone,servers
+#     return None
 
 def check_ns_cache(Name,curr_zone=''):
     global NS_CACHE
     l = len(curr_zone)
-    if Name in NS_CACHE : zones = [Name] # exact match
-    else: 
-        zones = [x for x in NS_CACHE.keys() if (len(x) > l and Name.endswith('.'+x))]
-        if not zones : return None
-        zones = sorted(zones,key=lambda x:len(x),reverse=True)
-    for zone in zones:
-        servers = []
-        for RR in NS_CACHE[zone]: # NS record
-            servers.extend(check_cache(
-                RR.Value, # The hostname of delegated server
-                'A','IN'))
-        if servers:return zone,servers
+    parts = Name.split('.')
+    for num_parts in range(len(parts),l,-1):
+        domain = parts[-num_parts:]
+        domain = '.'.join(domain)
+        if domain in NS_CACHE:
+            assert isinstance(NS_CACHE,dict)
+            RRs =NS_CACHE[domain]
+            servers = []
+            for RR in choices(list(RRs),k=5):
+                servers.extend(check_cache(RR.Value,1,1))
+            servers = list(set(servers))
+            return domain,servers
     return None
 
 def create_dns_query(name, qtype, qclass, RD=False, Cache=False):
@@ -358,16 +383,21 @@ def ask(name,server=ROOT_SERVER,qtype=1,qclass=1,
                 stats['cache_hits'] += 1
                 return cached_records,stats
             return cached_records
-    check_time(0)
+        check_time(0)
 
-    if CACHING and name != zone:
-        log.print('<1> Checking cache for NS records',level=2)
-        ns_cached_records = check_ns_cache(name,zone)
+        if name != zone and NS_CACHING:
+            log.print('<1> Checking cache for NS records',level=2)
+            try:ns_cached_records = check_ns_cache(name,zone)
+            except Exception as e:
+                log.print('chech_ns_cache had error ',e)
+                raise e
+        else:ns_cached_records = None
+
         if ns_cached_records:
             new_zone,RRs = ns_cached_records
             log.print('[CACHE] HIT : Found',len(RRs),'servers for zone',new_zone)
             if get_stats:stats['cache_hits'] += 1
-            for RR in choices(RRs,k=5): # Only check for 5
+            for RR in RRs:
                 new_server = RR.Value
                 log.print('Trying',RR.Name,'(',new_server,')',level=3)
                 try:
@@ -386,9 +416,9 @@ def ask(name,server=ROOT_SERVER,qtype=1,qclass=1,
         else: 
             log.print(f'[CACHE] MISS : {len(DNS_CACHE)} keys in cache and {len(NS_CACHE)} zones')
             if get_stats:stats['cache_misses'] += 1
-    check_time(1)
+        check_time(1)
 
-    log.print('<3> Asking server for direct hits',level=2)
+    log.print('<2> Asking server for direct hits',level=2)
     pack = create_dns_query(name,qtype,qclass,RD)
     response = send_dns_query(pack,server,timeout=timeout,logger=log,measure_time=get_stats)
     if get_stats: 
@@ -497,7 +527,7 @@ def server(ip,Log=False,LogFile=None):
     ANSWERS_RECIEVED = 0
     f = open('servers_stats.csv','w')
     def AddStatRow(*args):print(*args,sep=',',file=f,flush=True)
-    AddStatRow('name','type','RD','Cache','sum_RTT','queries','total_time','cache_hits','cache_misses')
+    AddStatRow('name','type','RD','Cache','sum_RTT','queries','total_time','cache_hits','cache_misses','num_answers')
     while True:
         try:
             data, addr = sock.recvfrom(512)
@@ -520,6 +550,8 @@ def server(ip,Log=False,LogFile=None):
             queries = stats['queries']
             log.print('[STAT] servers contacted :',queries)
             log.print('[STAT] average server communication time :',round(1000*sum_RTT/queries,2),'ms')
+            log.print('[STAT] total server communication time :',round(1000*sum_RTT,2),'ms')
+            log.print('[STAT] total time : ',round(1000*total_time,2),'ms')
             if Cache:
                 cache_hits = stats['cache_hits']
                 cache_misses = stats['cache_misses']
@@ -534,7 +566,7 @@ def server(ip,Log=False,LogFile=None):
             else:
                 cache_hits = ''
                 cache_misses = ''
-            AddStatRow(qname,qtype,RD,Cache,sum_RTT,queries,total_time,cache_hits,cache_misses)
+            AddStatRow(qname,qtype,RD,Cache,sum_RTT,queries,total_time,cache_hits,cache_misses,len(answers))
             if not answers:
                 log.print("[!] No answers for",qname)
                 response = (

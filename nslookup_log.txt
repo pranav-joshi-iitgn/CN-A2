@@ -141,13 +141,13 @@ Address:	10.0.0.6#53
 
 Non-authoritative answer:
 Name:	22hotmail.com
-Address: 20.70.246.20
+Address: 20.236.44.162
 Name:	22hotmail.com
 Address: 20.112.250.133
 Name:	22hotmail.com
-Address: 20.76.201.171
+Address: 20.70.246.20
 Name:	22hotmail.com
-Address: 20.236.44.162
+Address: 20.76.201.171
 Name:	22hotmail.com
 Address: 20.231.239.246
 
@@ -183,9 +183,9 @@ Address:	10.0.0.6#53
 
 Non-authoritative answer:
 Name:	gardeninginflorida.com
-Address: 13.248.213.45
-Name:	gardeninginflorida.com
 Address: 76.223.67.189
+Name:	gardeninginflorida.com
+Address: 13.248.213.45
 
 
 
@@ -194,9 +194,9 @@ Address:	10.0.0.6#53
 
 Non-authoritative answer:
 Name:	thepropertyvault.co.uk
-Address: 76.223.67.189
-Name:	thepropertyvault.co.uk
 Address: 13.248.213.45
+Name:	thepropertyvault.co.uk
+Address: 76.223.67.189
 
 
 
@@ -233,9 +233,9 @@ Address:	10.0.0.6#53
 
 Non-authoritative answer:
 Name:	rubenquinones.com
-Address: 15.197.225.128
-Name:	rubenquinones.com
 Address: 3.33.251.168
+Name:	rubenquinones.com
+Address: 15.197.225.128
 
 
 
@@ -410,9 +410,9 @@ Address:	10.0.0.6#53
 
 Non-authoritative answer:
 Name:	medintime.ru
-Address: 104.21.2.236
-Name:	medintime.ru
 Address: 172.67.129.206
+Name:	medintime.ru
+Address: 104.21.2.236
 
 
 
@@ -448,13 +448,13 @@ Address:	10.0.0.6#53
 
 Non-authoritative answer:
 Name:	hackthissite.org
-Address: 137.74.187.102
-Name:	hackthissite.org
 Address: 137.74.187.100
+Name:	hackthissite.org
+Address: 137.74.187.104
 Name:	hackthissite.org
 Address: 137.74.187.101
 Name:	hackthissite.org
-Address: 137.74.187.104
+Address: 137.74.187.102
 Name:	hackthissite.org
 Address: 137.74.187.103
 
@@ -500,9 +500,9 @@ Address:	10.0.0.6#53
 
 Non-authoritative answer:
 Name:	greens.my
-Address: 104.21.4.120
-Name:	greens.my
 Address: 172.67.132.13
+Name:	greens.my
+Address: 104.21.4.120
 
 
 
@@ -520,9 +520,9 @@ Address:	10.0.0.6#53
 
 Non-authoritative answer:
 Name:	magic-illusion.ru
-Address: 172.67.132.25
-Name:	magic-illusion.ru
 Address: 104.21.4.130
+Name:	magic-illusion.ru
+Address: 172.67.132.25
 
 
 
@@ -538,9 +538,9 @@ Address:	10.0.0.6#53
 
 Non-authoritative answer:
 Name:	solcredito.es
-Address: 18.239.153.17
-Name:	solcredito.es
 Address: 18.239.153.67
+Name:	solcredito.es
+Address: 18.239.153.17
 Name:	solcredito.es
 Address: 18.239.153.56
 Name:	solcredito.es
@@ -652,11 +652,12 @@ Address: 162.248.51.100
 
 
 
-;; Got SERVFAIL reply from 10.0.0.6, trying next server
-;; communications error to 127.0.0.53#53: connection refused
-;; communications error to 127.0.0.53#53: connection refused
-;; communications error to 127.0.0.53#53: connection refused
-;; no servers could be reached
+Server:		10.0.0.6
+Address:	10.0.0.6#53
+
+Non-authoritative answer:
+Name:	roche-applied-science.com
+Address: 149.250.245.221
 
 
 
