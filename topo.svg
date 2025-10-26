@@ -1,0 +1,127 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="554pt" height="306pt" viewBox="0.00 0.00 554.15 306.47">
+<g id="graph0" class="graph" transform="translate(4,302.4700012207031) scale(1)" data-name="G">
+
+<polygon fill="white" stroke="none" points="-4,4 -4,-302.47 550.15,-302.47 550.15,4 -4,4" style=""/>
+<!-- h1 -->
+<g id="node1" class="node" pointer-events="visible" data-name="h1">
+
+<polygon fill="none" stroke="black" points="99.43,-298.67 0.19,-298.67 0.19,-239.87 99.43,-239.87 99.43,-298.67" style=""/>
+<text text-anchor="middle" x="49.81" y="-281.87" font-family="Times,serif" font-size="14.00" style="">H1</text>
+<text text-anchor="middle" x="49.81" y="-265.07" font-family="Times,serif" font-size="14.00" style="">FQDN:h1.ass2</text>
+<text text-anchor="middle" x="49.81" y="-248.27" font-family="Times,serif" font-size="14.00" style="">IP:10.0.0.1</text>
+</g>
+<!-- s1 -->
+<g id="node6" class="node" pointer-events="visible" data-name="s1">
+
+<ellipse fill="antiquewhite" stroke="black" cx="49.81" cy="-149.24" rx="21.47" ry="21.47" style=""/>
+<text text-anchor="middle" x="49.81" y="-145.04" font-family="Times,serif" font-size="14.00" style="">S1</text>
+</g>
+<!-- h1&#45;&#45;s1 -->
+<g id="edge1" class="edge" data-name="h1--s1">
+
+<path fill="none" stroke="black" d="M49.81,-239.4C49.81,-218.24 49.81,-190.02 49.81,-171.04" style=""/>
+<text text-anchor="middle" x="89.48" y="-209.47" font-family="Times,serif" font-size="14.00" style="">BW:100Mbps</text>
+<text text-anchor="middle" x="89.48" y="-192.67" font-family="Times,serif" font-size="14.00" style="">Delay:2ms</text>
+</g>
+<!-- h2 -->
+<g id="node2" class="node" pointer-events="visible" data-name="h2">
+
+<polygon fill="none" stroke="black" points="238.43,-298.67 139.19,-298.67 139.19,-239.87 238.43,-239.87 238.43,-298.67" style=""/>
+<text text-anchor="middle" x="188.81" y="-281.87" font-family="Times,serif" font-size="14.00" style="">H2</text>
+<text text-anchor="middle" x="188.81" y="-265.07" font-family="Times,serif" font-size="14.00" style="">FQDN:h2.ass2</text>
+<text text-anchor="middle" x="188.81" y="-248.27" font-family="Times,serif" font-size="14.00" style="">IP:10.0.0.2</text>
+</g>
+<!-- s2 -->
+<g id="node7" class="node" pointer-events="visible" data-name="s2">
+
+<ellipse fill="antiquewhite" stroke="black" cx="188.81" cy="-149.24" rx="21.47" ry="21.47" style=""/>
+<text text-anchor="middle" x="188.81" y="-145.04" font-family="Times,serif" font-size="14.00" style="">S2</text>
+</g>
+<!-- h2&#45;&#45;s2 -->
+<g id="edge2" class="edge" data-name="h2--s2">
+
+<path fill="none" stroke="black" d="M188.81,-239.4C188.81,-218.24 188.81,-190.02 188.81,-171.04" style=""/>
+<text text-anchor="middle" x="228.48" y="-209.47" font-family="Times,serif" font-size="14.00" style="">BW:100Mbps</text>
+<text text-anchor="middle" x="228.48" y="-192.67" font-family="Times,serif" font-size="14.00" style="">Delay:2ms</text>
+</g>
+<!-- h3 -->
+<g id="node3" class="node" pointer-events="visible" data-name="h3">
+
+<polygon fill="none" stroke="black" points="377.43,-298.67 278.19,-298.67 278.19,-239.87 377.43,-239.87 377.43,-298.67" style=""/>
+<text text-anchor="middle" x="327.81" y="-281.87" font-family="Times,serif" font-size="14.00" style="">H3</text>
+<text text-anchor="middle" x="327.81" y="-265.07" font-family="Times,serif" font-size="14.00" style="">FQDN:h3.ass2</text>
+<text text-anchor="middle" x="327.81" y="-248.27" font-family="Times,serif" font-size="14.00" style="">IP:10.0.0.3</text>
+</g>
+<!-- s3 -->
+<g id="node8" class="node" pointer-events="visible" data-name="s3">
+
+<ellipse fill="antiquewhite" stroke="black" cx="327.81" cy="-149.24" rx="21.47" ry="21.47" style=""/>
+<text text-anchor="middle" x="327.81" y="-145.04" font-family="Times,serif" font-size="14.00" style="">S3</text>
+</g>
+<!-- h3&#45;&#45;s3 -->
+<g id="edge3" class="edge" data-name="h3--s3">
+
+<path fill="none" stroke="black" d="M327.81,-239.4C327.81,-218.24 327.81,-190.02 327.81,-171.04" style=""/>
+<text text-anchor="middle" x="367.48" y="-209.47" font-family="Times,serif" font-size="14.00" style="">BW:100Mbps</text>
+<text text-anchor="middle" x="367.48" y="-192.67" font-family="Times,serif" font-size="14.00" style="">Delay:2ms</text>
+</g>
+<!-- h4 -->
+<g id="node4" class="node" pointer-events="visible" data-name="h4">
+
+<polygon fill="none" stroke="black" points="516.43,-298.67 417.19,-298.67 417.19,-239.87 516.43,-239.87 516.43,-298.67" style=""/>
+<text text-anchor="middle" x="466.81" y="-281.87" font-family="Times,serif" font-size="14.00" style="">H4</text>
+<text text-anchor="middle" x="466.81" y="-265.07" font-family="Times,serif" font-size="14.00" style="">FQDN:h4.ass2</text>
+<text text-anchor="middle" x="466.81" y="-248.27" font-family="Times,serif" font-size="14.00" style="">IP:10.0.0.4</text>
+</g>
+<!-- s4 -->
+<g id="node9" class="node" pointer-events="visible" data-name="s4">
+
+<ellipse fill="antiquewhite" stroke="black" cx="466.81" cy="-149.24" rx="21.47" ry="21.47" style=""/>
+<text text-anchor="middle" x="466.81" y="-145.04" font-family="Times,serif" font-size="14.00" style="">S4</text>
+</g>
+<!-- h4&#45;&#45;s4 -->
+<g id="edge4" class="edge" data-name="h4--s4">
+
+<path fill="none" stroke="black" d="M466.81,-239.4C466.81,-218.24 466.81,-190.02 466.81,-171.04" style=""/>
+<text text-anchor="middle" x="506.48" y="-209.47" font-family="Times,serif" font-size="14.00" style="">BW:100Mbps</text>
+<text text-anchor="middle" x="506.48" y="-192.67" font-family="Times,serif" font-size="14.00" style="">Delay:2ms</text>
+</g>
+<!-- dns -->
+<g id="node5" class="node" pointer-events="visible" data-name="dns">
+
+<polygon fill="aqua" stroke="black" points="241.37,-58.6 136.24,-58.6 136.24,0.2 241.37,0.2 241.37,-58.6" style=""/>
+<text text-anchor="middle" x="188.81" y="-41.8" font-family="Times,serif" font-size="14.00" style="">DNS resolver</text>
+<text text-anchor="middle" x="188.81" y="-25" font-family="Times,serif" font-size="14.00" style="">FQDN:dns.ass2</text>
+<text text-anchor="middle" x="188.81" y="-8.2" font-family="Times,serif" font-size="14.00" style="">IP=10.0.0.5</text>
+</g>
+<!-- s1&#45;&#45;s2 -->
+<g id="edge6" class="edge" data-name="s1--s2">
+
+<path fill="none" stroke="black" d="M71.53,-149.24C97.64,-149.24 141.2,-149.24 167.24,-149.24" style=""/>
+<text text-anchor="middle" x="119.31" y="-173.24" font-family="Times,serif" font-size="14.00" style="">BW:100Mbps</text>
+<text text-anchor="middle" x="119.31" y="-156.44" font-family="Times,serif" font-size="14.00" style="">Delay:5ms</text>
+</g>
+<!-- s2&#45;&#45;dns -->
+<g id="edge5" class="edge" data-name="s2--dns">
+
+<path fill="none" stroke="black" d="M188.81,-127.41C188.81,-108.34 188.81,-79.97 188.81,-58.79" style=""/>
+<text text-anchor="middle" x="228.48" y="-97.4" font-family="Times,serif" font-size="14.00" style="">BW:100Mbps</text>
+<text text-anchor="middle" x="228.48" y="-80.6" font-family="Times,serif" font-size="14.00" style="">Delay:1ms</text>
+</g>
+<!-- s2&#45;&#45;s3 -->
+<g id="edge7" class="edge" data-name="s2--s3">
+
+<path fill="none" stroke="black" d="M210.53,-149.24C236.64,-149.24 280.2,-149.24 306.24,-149.24" style=""/>
+<text text-anchor="middle" x="258.31" y="-173.24" font-family="Times,serif" font-size="14.00" style="">BW:100Mbps</text>
+<text text-anchor="middle" x="258.31" y="-156.44" font-family="Times,serif" font-size="14.00" style="">Delay:8ms</text>
+</g>
+<!-- s3&#45;&#45;s4 -->
+<g id="edge8" class="edge" data-name="s3--s4">
+
+<path fill="none" stroke="black" d="M349.53,-149.24C375.64,-149.24 419.2,-149.24 445.24,-149.24" style=""/>
+<text text-anchor="middle" x="397.31" y="-173.24" font-family="Times,serif" font-size="14.00" style="">BW:100Mbps</text>
+<text text-anchor="middle" x="397.31" y="-156.44" font-family="Times,serif" font-size="14.00" style="">Delay:10ms</text>
+</g>
+</g>
+</svg>

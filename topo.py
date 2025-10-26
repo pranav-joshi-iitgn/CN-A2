@@ -7,6 +7,9 @@ from mininet.cli import CLI
 from mininet.log import setLogLevel, info
 from mininet.nodelib import NAT
 from time import sleep
+import sys,os
+from contextlib import redirect_stdout,redirect_stderr
+import warnings
 
 class AssignmentTopo(Topo):
 
@@ -43,20 +46,32 @@ class AssignmentTopo(Topo):
         self.addComLink(s2,s3,None,None,100,'8ms')
         self.addComLink(s3,s4,None,None,100,'10ms')
 
-
-def run():
+def run(only_topo=False,only_nat=False):
     topo = AssignmentTopo()
     net = Mininet(topo=topo, link=TCLink)
 
-    net.addNAT(name='n0').configDefault()
-    net.start()
-
-    mininet_log_file = open('mininet.log','w')
-    CLI(net,script='mininet_script.txt',stdout=mininet_log_file)
-    mininet_log_file.close()
+    if only_topo:
+        net.start()
+        net.pingAll()
+        CLI(net)
+    elif only_nat:
+        net.addNAT(name='n0').configDefault()
+        net.start()
+        CLI(net)
+    else:
+        net.addNAT(name='n0').configDefault()
+        net.start()
+        mininet_log_file = open('mininet.log','w')
+        CLI(net,script='mininet_script.txt',stdout=mininet_log_file)
+        mininet_log_file.close()
 
     net.stop()
 
 if __name__ == '__main__':
+    warnings.filterwarnings("ignore")
     setLogLevel('info')
-    run()
+    only_topo = ("--only_topo" in sys.argv)
+    only_nat = ('--only_nat' in sys.argv)
+    if only_nat and only_topo : 
+        print("can't have both --only_topo and --only_nat")
+    else:run(only_topo,only_nat)
