@@ -1,6 +1,15 @@
 # Computer Networks (CS 331) Assignment 2
 
-DISCLAIMER : Some scripts (mainly `config.sh` and `listener_setup.sh`) change global configuration in system, such as `/etc/resolv.conf` and affect connetivity to internet. 
+## Team
+
+| Name | Roll no. |
+| ---- | -------- |
+| Pranav Joshi | 22110197 |
+| Nishit | 22110172 |
+
+### DISCLAIMER
+
+Some scripts (mainly `config.sh` and `listener_setup.sh`) change global configuration in system, such as `/etc/resolv.conf` and affect connetivity to internet. 
 
 ## Part A
 
