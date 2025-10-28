@@ -9,9 +9,9 @@ sudo python3 topo.py 2>/dev/null;
 sudo echo "reverting configuration...";
 sudo sh unconfig.sh;
 sudo echo "Doing Analysis..."
-python3 Analysis.py H1.csv 1> H1_analysis_result.txt 2>/dev/null;
-python3 Analysis.py H2.csv 1> H2_analysis_result.txt 2>/dev/null;
-python3 Analysis.py H3.csv 1> H3_analysis_result.txt 2>/dev/null;
-python3 Analysis.py H4.csv 1> H4_analysis_result.txt 2>/dev/null;
-python3 Analyse_stats.py 1> /dev/null 2> /dev/null;
+sudo python3 Analysis.py H1.csv 1> H1_analysis_result.txt 2>/dev/null;
+sudo python3 Analysis.py H2.csv 1> H2_analysis_result.txt 2>/dev/null;
+sudo python3 Analysis.py H3.csv 1> H3_analysis_result.txt 2>/dev/null;
+sudo python3 Analysis.py H4.csv 1> H4_analysis_result.txt 2>/dev/null;
+sudo python3 Analyse_stats.py 1> /dev/null 2> /dev/null;
 sudo echo "Finished!"

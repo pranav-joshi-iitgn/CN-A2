@@ -1,11 +1,11 @@
 graph G {
 
-    h1 [label="H1\nFQDN:h1.ass2\nIP:10.0.0.1" shape=rect];
-    h2 [label="H2\nFQDN:h2.ass2\nIP:10.0.0.2" shape=rect];
-    h3 [label="H3\nFQDN:h3.ass2\nIP:10.0.0.3" shape=rect];
-    h4 [label="H4\nFQDN:h4.ass2\nIP:10.0.0.4" shape=rect];
+    h1 [label="h1\nIP:10.0.0.1" shape=rect];
+    h2 [label="h2\nIP:10.0.0.2" shape=rect];
+    h3 [label="h3\nIP:10.0.0.3" shape=rect];
+    h4 [label="h4\nIP:10.0.0.4" shape=rect];
 
-    dns [label ="DNS resolver\nFQDN:dns.ass2\nIP=10.0.0.5" shape=rect fillcolor=aqua style=filled]
+    dns [label ="dns (DNS resolver)\nIP=10.0.0.5" shape=rect fillcolor=aqua style=filled]
 
     s1 [label="S1" shape=circle style=filled fillcolor=antiquewhite];
     s2 [label="S2" shape=circle style=filled fillcolor=antiquewhite];

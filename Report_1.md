@@ -220,8 +220,6 @@ The data we are interested in looks like this
 
 | query                       | type | class | first_ans_default | num_ans_RR_default | lookup_time_default |
 | --------------------------- | ---- | ----- | ----------------- | ------------------ | ------------------- |
-| tuhafhaberler.com           | 1    | 1     |                   | 0                  | 57                  |
-| rtsab.com                   | 1    | 1     |                   | 0                  | 442                 |
 | i-butterfly.ru              | 1    | 1     | 104.21.88.172     | 2                  | 357                 |
 | datepanchang.com            | 1    | 1     | 13.75.66.141      | 1                  | 446                 |
 | localhost.re                | 1    | 1     | 172.67.163.57     | 2                  | 634                 |
@@ -229,19 +227,6 @@ The data we are interested in looks like this
 | ex-jw.org                   | 1    | 1     | 185.230.63.171    | 3                  | 432                 |
 | us.tf                       | 1    | 1     |                   | 0                  | 738                 |
 | informarexresistere.fr      | 1    | 1     | 178.32.143.165    | 1                  | 790                 |
-| running-sigi.de             | 1    | 1     |                   | 0                  | 32                  |
-| buynowfromusa.com           | 1    | 1     | 35.223.118.1      | 1                  | 1293                |
-| pbprofile.com               | 1    | 1     |                   | 0                  | 223                 |
-| fini.net                    | 1    | 1     | 198.57.192.137    | 1                  | 444                 |
-| globalpoliticalspectrum.com | 1    | 1     |                   | 0                  | 214                 |
-| 41latitude.com              | 1    | 1     |                   | 0                  | 254                 |
-| zzxu.cn                     | 1    | 1     |                   | 0                  | 551                 |
-| energybulbs.co.uk           | 1    | 1     | 23.227.38.32      | 1                  | 562                 |
-| o-ov.com                    | 1    | 1     |                   | 0                  | 434                 |
-| lozo.com                    | 1    | 1     | 107.21.144.47     | 2                  | 325                 |
-| tottenhamhk.com             | 1    | 1     |                   | 0                  | 237                 |
-| newstetic.com               | 1    | 1     | 104.21.3.241      | 2                  | 338                 |
-| triggerfish.se              | 1    | 1     | 162.159.135.42    | 2                  | 543                 |
 
 This data can be analysed through a script like in `part_B.py`. 
 The outputs of the script on the current data are :
@@ -262,7 +247,6 @@ Metrics and formulas
 
 Note that the percentage of queries that got answered are much lower than what one would expect consider the corruption and packet loss rates for the internet.
 This actually happened because IITGN rate-limits WiFi usage, giving us only about 70% of queries being answered.
-This figure of 70% is not a random number.
 
 ## Part C
 
@@ -431,15 +415,18 @@ Note that one resolution then, might contain multiple queries.
 
 I have created graphs for both these types of latencies for the first 10 rows in `servers_stats.csv` after a fresh run of `run.sh`.
 
-![resolution latency](latency_vs_queries.png)
-![query latency](avg_RTT_vs_queries.png)
+<table><tr>
+<td><img src=latency_vs_queries.png></td>
+<td><img src=avg_RTT_vs_queries.png></td>
+</tr></table>
 
 But I believe doing it for just 10 rows is not good enough.
 
+The next graph describes the effect that caching has on the total latency (including active CPU cycles)
+and on just the total time spent waiting for responses from other servers.
+
 ![cache effect](latency_vs_sum_RTT.png)
 
-This graph describes the effect that caching has on the total latency (including active CPU cycles)
-and on just the total time spent waiting for responses from other servers.
 We can clearly see that the green clusters are concentrated to the left side, meaning that the total time spent waiting is reduced by caching, since the number of queries is reduced.
 But in terms of the total time (including time for computation, updating cache, etc.), the caching that I implemented is not so effective.
 The reason for this is because I am not using the most optimum methods for caching and am working in a very high level language (Python) as compared to C/C++ which is what most of the dns python libraries such as `bind` are at least partially written in.
@@ -450,12 +437,38 @@ I also noticed that on removing the usage of NS records, the cluster with the hi
 
 Apart from plots generated from data collected by the server, I also have those from data collected by the clients.
 
-![H1](H1_latency.png)
-![H2](H2_latency.png)
-![H3](H3_latency.png)
-![H4](H4_latency.png)
+<table>
+<tr>
+<td><img src=H1_latency.png></td>
+<td><img src=H2_latency.png></td>
+</tr>
+<tr>
+<td><img src=H3_latency.png></td>
+<td><img src=H4_latency.png></td>
+</tr>
+</table>
 
-## Bonus (E/F)
+The computed statistics for the measurements done by the hosts which are stored in the text files look like this (`H1_analysis_result.txt`) :
+
+- queries answered by resolver :
+	- default	: 67.0 %
+	- custom	: 69.0 %
+	- custom_RD	: 69.0 %
+	- custom_Cache	: 69.0 %
+- average latency for queries answered by resolver :
+	- default	: 626.03 ms
+	- custom	: 1022.8 ms
+	- custom_RD	: 1001.65 ms
+	- custom_Cache	: 2095.2 ms
+- average throughput for queries answered by resolver :
+	- default	: 1.6 request/s
+	- custom	: 0.98 request/s
+	- custom_RD	: 1.0 request/s
+	- custom_Cache	: 0.48 request/s
+
+This is only for the data collected by `h1` . For data collected by other clients (`h2`,`h3`,`h4`) there are similarly named files.
+
+## Bonus (E and F)
 
 - Recursive mode (E): The resolver serves recursion (iterative internally). A client can set RD=1; we also run RD=1 passes in `extract.py` to compare.
 - Caching (F): Implemented as above; we record cache hits/misses per query and report aggregate hit rate in logs; the CSV includes cache counters and total times.
